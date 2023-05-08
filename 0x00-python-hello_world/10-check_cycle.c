@@ -15,7 +15,7 @@ int check_cycle(listint_t *list)
 	listint_t *word = list;
 
 	if (list == NULL)
-		return (NULL);
+		return (0);
 
 	while (input && input->next)
 	{
