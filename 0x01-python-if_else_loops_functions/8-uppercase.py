@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 
 def uppercase(str):
+    return my_upp(str)
+
+def my_upp(st):
     word = ""
-    for x in str:
-        if ord(x) > 96 and ord(x) < 123:
-            word += chr(ord(x)-32)
+    for i in st:
+        if 97 <= ord(i) <= 122:
+            word += chr(ord(i) - 32)
         else:
-            word += x
-            print({}.format(word))
+            word += i
+            print("{}".format(word), end="")
+            return word
