@@ -11,4 +11,4 @@ def my_upper(string):
 def uppercase(str):
     word = str.lower()
     new_word = my_upper(word)
-    print(new_word)
+    print("{}".format(new_word))
