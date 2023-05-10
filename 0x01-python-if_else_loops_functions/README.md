@@ -342,5 +342,162 @@ You don’t need to understand __import__
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
-## 
+## 11-pow.py:
+
+Write a function that computes a to the power of b and return the value.
+
+Prototype: def pow(a, b):
+
+Returns the value of a ^ b
+
+You are not allowed to import any module
+
+You don’t need to understand __import__ 
+
+	guillaume@ubuntu:~/0x01$ cat 11-main.py
+	#!/usr/bin/env python3
+	pow = __import__('11-pow').pow
+
+	print(pow(2, 2))
+	print(pow(98, 2))
+	print(pow(98, 0))
+	print(pow(100, -2))
+	print(pow(-4, 5))
+
+	guillaume@ubuntu:~/0x01$ ./11-main.py
+	4
+	9604
+	1
+	0.0001
+	-1024
+	guillaume@ubuntu:~/0x01$ 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 12-fizzbuzz.py:
+
+Write a function that prints the numbers from 1 to 100 separated by a space.
+
+For multiples of three print Fizz instead of the number and for multiples of five print Buzz.
+
+For numbers which are multiples of both three and five print FizzBuzz.
+
+Prototype: def fizzbuzz():
+
+Each element should be followed by a space
+
+You are not allowed to import any module
+
+You don’t need to understand __import__
+
+	guillaume@ubuntu:~/0x01$ cat 12-main.py
+	#!/usr/bin/env python3
+	fizzbuzz = __import__('12-fizzbuzz').fizzbuzz
+
+	fizzbuzz()
+	print("")
+
+	guillaume@ubuntu:~/0x01$ ./12-main.py | cat -e
+	1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz $
+	guillaume@ubuntu:~/0x01$ 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 13-insert_number.c:
+
+Technical interview preparation:
+
+You are not allowed to google anything
+
+Whiteboard first
+
+Write a function in C that inserts a number into a sorted singly linked list.
+
+		Prototype: listint_t *insert_node(listint_t **head, int number);
+
+		Return: the address of the new node, or NULL if it failed 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 100-print_tebahpla.py:
+
+Write a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
+
+You can only use one print function with string format
+
+You can only use one loop in your code
+
+You are not allowed to store characters in a variable
+
+You are not allowed to import any module
+
+	guillaume@ubuntu:~/0x01$ ./100-print_tebahpla.py
+	zYxWvUtSrQpOnMlKjIhGfEdCbAguillaume@ubuntu:~/0x01$
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 101-remove_char_at.py:
+
+Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).
+
+Prototype: def remove_char_at(str, n):
+
+You are not allowed to import any module
+
+You don’t need to understand __import__
+
+
+	guillaume@ubuntu:~/0x01$ cat 101-main.py
+	#!/usr/bin/env python3
+	remove_char_at = __import__('101-remove_char_at').remove_char_at
+
+	print(remove_char_at("Best School", 3))
+	print(remove_char_at("Chicago", 2))
+	print(remove_char_at("C is fun!", 0))
+	print(remove_char_at("School", 10))
+	print(remove_char_at("Python", -2))
+
+	guillaume@ubuntu:~/0x01$ ./101-main.py
+	Bes School
+	Chcago
+	 is fun!
+	School
+	Python
+	guillaume@ubuntu:~/0x01$ 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 102-magic_calculation.py:
+
+Write the Python function def magic_calculation(a, b, c): that does exactly the same as the following Python bytecode:
+
+	 3           0 LOAD_FAST                0 (a)
+	              3 LOAD_FAST                1 (b)
+	              6 COMPARE_OP               0 (<)
+	              9 POP_JUMP_IF_FALSE       16
+
+	  4          12 LOAD_FAST                2 (c)
+	             15 RETURN_VALUE
+
+	  5     >>   16 LOAD_FAST                2 (c)
+	             19 LOAD_FAST                1 (b)
+	             22 COMPARE_OP               4 (>)
+	             25 POP_JUMP_IF_FALSE       36
+
+	  6          28 LOAD_FAST                0 (a)
+	             31 LOAD_FAST                1 (b)
+	             34 BINARY_ADD
+	             35 RETURN_VALUE
+
+	  7     >>   36 LOAD_FAST                0 (a)
+	             39 LOAD_FAST                1 (b)
+	             42 BINARY_MULTIPLY
+	             43 LOAD_FAST                2 (c)
+	             46 BINARY_SUBTRACT
+	             47 RETURN_VALUE
+
+<a href="https://docs.python.org/3.4/library/dis.html"> tips-ByteCode </a>
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
