@@ -7,16 +7,16 @@ def my_function():
         if ac == 2:
             ac -= 1
             for i in sys.argv[1:]:
-                print("{} argument:" .format(ac))
-                print("{}: {}" .format(ac, i))
+                print("{} argument:".format(ac))
+                print("{}: {}".format(ac, i))
         elif ac > 2:
             ac -= 1
-            print("{} arguments:" .format(ac))
+            print("{} arguments:".format(ac))
             for i, x in enumerate(sys.argv[1:], start=1):
-                print("{}: {}" .format(i, x))
+                print("{}: {}".format(i, x))
     else:
         ac -= 1
-        print("{} arguments." .format(ac))
+        print("{} arguments.".format(ac))
 
 
 if __name__ == "__main__":
