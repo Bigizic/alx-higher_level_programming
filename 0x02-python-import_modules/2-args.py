@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
 
-def my_function():
+if __name__ == "__main__":
     ac = len(sys.argv)
     if ac > 1:
         if ac == 2:
@@ -17,7 +17,3 @@ def my_function():
     else:
         ac -= 1
         print("{} arguments.".format(ac))
-
-
-if __name__ == "__main__":
-    my_function()
