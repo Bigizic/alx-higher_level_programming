@@ -1,17 +1,14 @@
 #!/usr/bin/python3
 import sys
 
-def my_function():
+if __name__ == "__main__":
     ac = len(sys.argv)
     word = sys.argv[1:]
 
-    if (ac > 1):
+    if ac > 1:
         result = sum(int(i) for i in word)
-        print("{}" .format(result))
+        print("{}".format(result))
         
     else:
         ac -= 1
-        print("{}" .format(ac))
-
-if __name__ == "__main__":
-    my_function()
+        print("{}".format(ac))
