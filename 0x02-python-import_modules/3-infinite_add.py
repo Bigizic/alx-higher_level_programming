@@ -6,7 +6,6 @@ if __name__ == "__main__":
     if ac > 1:
         result = sum(int(i) for i in word)
         print("{}".format(result))
-        
     else:
         ac -= 1
         print("{}".format(ac))
