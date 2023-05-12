@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import sys
 
 if __name__ == "__main__":
+    import sys
     ac = len(sys.argv)
     word = sys.argv[1:]
     if ac > 1:
