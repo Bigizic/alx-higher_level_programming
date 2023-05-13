@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def string_duplicate(string, n):
     result = string * n
     return result
