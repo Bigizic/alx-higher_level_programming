@@ -5,6 +5,5 @@ def multiple_returns(sentence):
         first = sentence[0]
     if sentence is None:
         first = None
-        list_len = None
     x = (list_len, first)
     return x
