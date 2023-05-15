@@ -1,10 +1,3 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    list_len = len(sentence)
-    first = sentence[0]
-    if list_len == 0:
-        first = None
-    for i in sentence:
-        if isinstance(i, str):
-            x = (list_len, first)
-    return x
+    return len(sentence), sentence[0] if sentence else None
