@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def string_duplicate(string, n):
-    result = string *n
-    return result
+    return string *n
 
 def new_in_list(my_list, idx, element):
     word = string_duplicate(my_list, 1)
