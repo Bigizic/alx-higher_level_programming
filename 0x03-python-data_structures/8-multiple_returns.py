@@ -4,5 +4,7 @@ def multiple_returns(sentence):
     first = sentence[0]
     if list_len == 0:
         first = None
-    x = (list_len, first)
+    for i in sentence:
+        if isinstance(i, str):
+            x = (list_len, first)
     return x
