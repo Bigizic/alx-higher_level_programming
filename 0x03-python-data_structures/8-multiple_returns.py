@@ -2,8 +2,9 @@
 def multiple_returns(sentence):
     list_len = len(sentence)
     for i in sentence:
-        f = sentence[0]
+        first = sentence[0]
     if sentence is None:
-        f = None
+        first = None
         list_len = None
-    return list_len, f
+    x = (list_len, first)
+    return x
