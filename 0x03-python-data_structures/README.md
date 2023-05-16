@@ -439,7 +439,7 @@ Since we now know a bit of C, we can look at what is happening under the hood of
 
 All your files will be interpreted/compiled on Ubuntu 14.04 LTS 
 
-<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/7e7834b535261d05532fb80a9304f7051c4ad7ac.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230516%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230516T023938Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c3a3bc0f02ac4de6a724294b0ee8025607cfdfa87dc608189fa9daa0e146b7ac"> </img>
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/7e7834b535261d05532fb80a9304f7051c4ad7ac.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230516%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230516T023938Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c3a3bc0f02ac4de6a724294b0ee8025607cfdfa87dc608189fa9daa0e146b7ac" alt="img" width="150" height="100">
 
 Create a C function that prints some basic info about Python lists.
 
