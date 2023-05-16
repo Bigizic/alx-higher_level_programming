@@ -15,7 +15,7 @@
 void print_python_list_info(PyObject *p)
 {
 	Py_ssize_t p_size = 0;
-	int i;
+	int i = 0;
 
 	if(PyList_CheckExact(p))
 	{
@@ -25,8 +25,8 @@ void print_python_list_info(PyObject *p)
 
 		while (i < p_size)
 		{
-			printf("Element %d: %s\n", i,
-					Py_TYPE(PyList_GetItem(p, i))->tp_name);
+			printf("Element %d: %s\n",
+					i, Py_TYPE(PyList_GetItem(p, i))->tp_name);
 			i++;
 		}
 	}
