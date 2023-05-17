@@ -14,7 +14,6 @@ def best_score(a_dictionary):
                 count += 1
             else:
                 break
-            
         return k_eys[count]
     else:
         return None
