@@ -22,11 +22,10 @@ int is_palindrome(listint_t **head)
 		current->next = NULL;
 		return (1);
 	}
-	if (*head == NULL)
+	else
 	{
-		*head = NULL;
-		current->next = *head;
-		return (0);
+		return (1);
 	}
+
 	return (0);
 }
