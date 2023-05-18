@@ -8,6 +8,6 @@ def weight_average(my_list=[]):
             result += i[0] *i[1]
             new_result += i[1]
         if new_result != 0:
-            return result / new_result
+            return result /new_result
     else:
         return 0
