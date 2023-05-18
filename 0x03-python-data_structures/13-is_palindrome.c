@@ -18,9 +18,15 @@ int is_palindrome(listint_t **head)
 
 	if (*head != NULL)
 	{
-		current->next = NULL;
 		*head = NULL;
+		current->next = NULL;
 		return (1);
+	}
+	if (*head == NULL)
+	{
+		*head = NULL;
+		current->next = *head;
+		return (0);
 	}
 	return (0);
 }
