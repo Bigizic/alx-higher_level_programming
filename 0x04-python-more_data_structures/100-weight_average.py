@@ -9,5 +9,4 @@ def weight_average(my_list=[]):
             new_result += i[1]
         if new_result != 0:
             return result /new_result
-    else:
-        return 0
+    return 0
