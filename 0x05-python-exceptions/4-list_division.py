@@ -25,7 +25,7 @@ def list_division(my_list_1, my_list_2, list_length):
                 result = my_list_1[x] / my_list_2[x]
 
             formatted_res = '{:.1f}'.format(result).rstrip('0').rstrip('.')
-            new_list.append(float(formatted_res) if '.' in formatted_res else int(formatted_res))
+            new_list.append(float(formatted_res))
     except nothing:
         pass
     finally:
