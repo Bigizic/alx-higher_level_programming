@@ -6,10 +6,9 @@ def safe_print_integer_err(value):
         if isinstance(value, int):
             print("{:d}".format(value))
             return (True)
-        else:
-            error_msg = "Exception: Unknown format code 'd' for object of type 'str'"
-            print(error_msg, file=sys.stderr)
-            raise TypeError(error_msg)
-            return (False)
-    except TypeError:
-        pass
+    except ValueError:
+        print("Exception: Unknown format code 'd' for object of type 'str'", file=sys.stderr)
+        return (False)
+    except:
+        print("Exception: Unknown format code 'd' for object of type 'str'", file=sys.stderr)
+        return (False)
