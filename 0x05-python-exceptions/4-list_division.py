@@ -5,7 +5,6 @@ def list_division(my_list_1, my_list_2, list_length):
     div = False
     max_range = False
     w_type = False
-    new_div = False
     try:
         for index, element in enumerate(my_list_1):
             if not isinstance(element, (int, float)):
