@@ -11,18 +11,16 @@
 
 class Square:
     """Square class"""
-    
+
     def __init__(self, size=0, position=(0, 0)):
         """Constructor"""
         self.size = size
         self.position = position
 
-
     @property
     def size(self):
         """Getter"""
         return self.square_area
-
 
     @size.setter
     def size(self, value):
@@ -33,23 +31,22 @@ class Square:
             else:
                 raise ValueError("size must be >= 0")
         else:
-             raise TypeError("size must be an integer")
+            raise TypeError("size must be an integer")
 
     @property
     def position(self):
         """Position getter"""
         return self.square_position
 
-
     @position.setter
     def position(self, value):
         """Position setter"""
         if not ((type(value) is tuple) or len(value) != 2 or not
-                all(isinstance(elements, int) and elements > 0 for i in value)):
+                all(isinstance(elements, int) and
+                    elements > 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.square_position = value
-
 
     def my_print(self):
         """Prints in stdout the square with the character #"""
