@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Square module
 Class square that defines a square by: (based on 1-square.py)
 """
