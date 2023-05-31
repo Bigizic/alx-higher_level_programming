@@ -3,6 +3,7 @@
 a class Square that defines a square by: (based on 3-square.py)
 """
 
+
 class Square:
     """Square class"""
 
@@ -24,7 +25,6 @@ class Square:
         """
 
         return self.square_area
-
 
     @size.setter
     def size(self, value):
