@@ -13,13 +13,18 @@ def list_division(my_list_1, my_list_2, list_length):
     if list1 or list2 is too short it prints "out of range"
     """
 
+
     new_list = [] # Decleares a new list
+
 
     div = False # Handles error message for dision by 0
 
+
     max_range = False # handles error message for out of range
 
+
     wrong_type = False # handles error message for wrong type
+
 
     double_max_range = False # handles error message when a list too short
 
