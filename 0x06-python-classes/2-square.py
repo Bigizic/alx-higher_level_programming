@@ -4,7 +4,7 @@ Class square that defines a square by: (based on 1-square.py)
 """
 
 
-class Square():
+class Square:
     """Class square"""
 
     def __init__(self, size=0):
