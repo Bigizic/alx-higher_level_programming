@@ -1,18 +1,14 @@
 #!/usr/bin/python3
 """Square module.
-This module contains a class that defines a square and its size and its
-position on the screen, checking if the given values are right, and a setter
-and getter methods to set or get them. A __str__ method is here to handle the
-use of the builtin print function. There's also an area method that returns
-the area of the square, another one that handles the print of the square.
+a class Square that defines a square by: (based on 6-square.py)
 """
 
 
 class Square():
-    """Defines a square."""
+    """Square Class"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Sets the necessary attributes for the Square object.
+        """Constructor
         Args:
             size (int): the size of one edge of the square.
             position (tuple): the coordinates of the square.
@@ -21,7 +17,7 @@ class Square():
         self.position = position
 
     def __str__(self):
-        """Sets the print behavior of the Square object."""
+        """Sets the print behavior"""
         square_str = ""
 
         if self.__size > 0:
@@ -35,11 +31,12 @@ class Square():
 
     @property
     def size(self):
-        """Get or set the size of the square."""
+        """size Getter"""
         return self.__size
 
     @size.setter
     def size(self, value):
+        """Size Setter"""
         if type(value) is int:
             if value >= 0:
                 self.__size = value
@@ -50,11 +47,12 @@ class Square():
 
     @property
     def position(self):
-        """Get or set the position of the square."""
+        """Posititon Getter"""
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Position Setter"""
         if type(value) is tuple and len(value) is 2 and \
                 type(value[0]) is int and type(value[1]) is int:
             self.__position = value
@@ -62,11 +60,11 @@ class Square():
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
-        """Returns the current square area."""
+        """Returns the current square area"""
         return self.__size ** 2
 
     def my_print(self):
-        """Prints the square with the # character on stdout."""
+        """Prints the square with the # character on stdout"""
         if self.__size > 0:
             for y in range(self.__position[1]):
                 print()
