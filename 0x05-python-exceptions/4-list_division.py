@@ -5,6 +5,7 @@ def list_division(my_list_1, my_list_2, list_length):
     div = False
     max_range = False
     wrong_type = False
+    double_max_range = False
     try:
         for index, element in enumerate(my_list_1):
             if not isinstance(element, (int, float)):
@@ -14,6 +15,8 @@ def list_division(my_list_1, my_list_2, list_length):
             if not isinstance(e, (int, float)):
                 my_list_2[i] = 0
                 wrong_type = True
+        if len(my_list_2) == 0:
+            double_max_range = True
         for x in range(list_length):
             if x >= len(my_list_1) or x >= len(my_list_2):
                 result = 0
@@ -35,5 +38,7 @@ def list_division(my_list_1, my_list_2, list_length):
         if wrong_type:
             print("wrong type")
         if max_range:
+            print("out of range")
+        if double_max_range:
             print("out of range")
         return new_list
