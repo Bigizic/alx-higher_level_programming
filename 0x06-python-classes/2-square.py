@@ -15,7 +15,6 @@ class Square():
             TypeError: if size is not given as integer
             ValueError: if size is less than 0
         """
-        
         if type(size) is int:
             if size >= 0:
                 self.__size = size
