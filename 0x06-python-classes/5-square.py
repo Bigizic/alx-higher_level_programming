@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """Square class
 a class Square that defines a square by: (based on 4-square.py)
-plus Public instance method: def my_print(self): that prints in stdout the square with the character #:
+plus Public instance method: def my_print(self): that prints in
+stdout the square with the character #:
 """
 
 
@@ -27,13 +28,12 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
-
     def my_print(self):
         """Prints in stdout the square with the character #"""
         if self.square_area == 0:
             print()
         for i in range(self.square_area):
-                print("#" * self.square_area)
+            print("#" * self.square_area)
 
     def area(self):
         """Returns square area"""
