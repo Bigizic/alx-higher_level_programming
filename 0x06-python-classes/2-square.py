@@ -9,9 +9,9 @@ class Square():
 
     def __init__(self, size=0):
         """Sets the attributes for square object.
-        Args:
+        Args: 
             Size (int) type
-        Raises:
+        Raises: 
             TypeError: if size is not given as integer
             ValueError: if size is less than 0
         """
