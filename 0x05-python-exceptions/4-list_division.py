@@ -18,6 +18,8 @@ def list_division(my_list_1, my_list_2, list_length):
             if x >= len(my_list_1) or x >= len(my_list_2):
                 result = 0
                 max_range = True
+            elif my_list_1[x] == 0:
+                result = 0
             elif my_list_2[x] == 0:
                 result = 0
                 div = True
