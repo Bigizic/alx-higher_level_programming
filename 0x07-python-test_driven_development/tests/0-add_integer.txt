@@ -1,6 +1,6 @@
-The ``add_intger`` doctest
+The ``add_integer`` doctest
 
->>> add-integer = __import__('0-add_integer').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
 Test files:
 
@@ -19,9 +19,9 @@ Test files:
 	>>> add_integer(4, "School")
 	Traceback (most recent call last):
 	...
-	TypeError: b most be an integer
+	TypeError: b must be an integer
 
 	>>> add_integer(None)
 	Traceback (most recent call last):
 	...
-	TypeError: a most be an integer
+	TypeError: a must be an integer
