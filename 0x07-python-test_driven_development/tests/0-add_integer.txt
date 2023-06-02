@@ -25,3 +25,13 @@ Test files:
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
+
+	>>> add_integer("me", "ore")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(True, True)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
