@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Addition Function
+"""Addition Module
 A function that adds two integers, a and b must be integers or float,
 otherwise raise a TypeError, a and b must be casted to integers if they
 are float
