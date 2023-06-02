@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 """Addition Module
-A function that adds two integers, a and b must be integers or float,
-otherwise raise a TypeError, a and b must be casted to integers if they
-are float
-"""
+a function that adds 2 integers, a and b must be integers or floats,
+otherwise it raise a TypeError, a and b must be first casted to
+integers if they are float, Returns an integer: the addition of a and b
 
+
+Parameters:
+    a(int or float) types: The first number
+    b(int or float) types: The second number
+"""
 
 def add_integer(a, b=98):
     """
-    Parameters:
-        a (int or float) type
-        b (int or float) type
+    Function that adds two numbers
     """
 
     if type(a) in [int, float]:
