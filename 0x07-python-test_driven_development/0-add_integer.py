@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 """Addition Module
-a function that adds 2 integers, a and b must be integers or floats,
-otherwise it raise a TypeError, a and b must be first casted to
-integers if they are float, Returns an integer: the addition of a and b
-
-
 Parameters:
     a(int or float) types: The first number
     b(int or float) types: The second number
