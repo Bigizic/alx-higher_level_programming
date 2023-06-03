@@ -1,0 +1,45 @@
+The ``Text indentation`` doctest
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test Files:
+
+	>>> text_indentation(1)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation(True)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi: litteram videor an totas paginas commovere")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	Quonam modo?
+	<BLANKLINE>
+	Utrum igitur tibi:
+	<BLANKLINE>
+	litteram videor an totas paginas commovere
+
+	>>> text_indentation("Lorem:")
+	Lorem:
+	<BLANKLINE>
+
+	>>> text_indentation("Isaac")
+	Isaac
+
+	>>> text_indentation(":Isaac")
+	:
+	<BLANKLINE>
+	Isaac
+
+	>>> text_indentation(".")
+	.
+	<BLANKLINE>
