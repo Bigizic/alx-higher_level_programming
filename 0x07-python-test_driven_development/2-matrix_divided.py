@@ -17,7 +17,15 @@ def matrix_divided(matrix, div):
     if type(matrix) is not list:
         try:
             raise TypeError(matrix_error)
-        except:
+        except Exception:
+            raise TypeError(matrix_error)
+    else:
+        matrix = matrix
+        
+    if type(matrix[0]) is not list and len(matrix) > 0:
+        try:
+            raise TypeError(matrix_error)
+        except Exception:
             raise TypeError(matrix_error)
     else:
         matrix = matrix
@@ -54,7 +62,7 @@ def matrix_divided(matrix, div):
             if type(elements) not in [int, float]:
                 try:
                     raise TypeError(matrix_error)
-                except:
+                except Exception:
                     raise TypeError(matrix_error)
             else:
                 new_element = round(elements / div, 2)
