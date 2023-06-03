@@ -31,3 +31,6 @@ Test Files:
 	Traceback (most recent call last):
 	...
 	ZeroDivisionError: division by zero
+
+	>>> matrix_divided([[1], [2], [3]], 3)
+	[[0.33], [0.67], [1.0]]
