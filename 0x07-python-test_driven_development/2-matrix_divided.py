@@ -38,7 +38,6 @@ def matrix_divided(matrix, div):
     else:
         div = div
 
-
     row_length = len(matrix[0])
     new_matrix = []
 
