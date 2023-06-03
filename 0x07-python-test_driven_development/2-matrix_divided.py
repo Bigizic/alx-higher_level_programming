@@ -21,6 +21,7 @@ def matrix_divided(matrix, div):
             for rows in matrix:
                 if len(rows) == row_length:
                     try:
+                        new_row = []
                         for elements in rows:
                             if type(elements) in [int, float]:
                                 try:
@@ -29,7 +30,7 @@ def matrix_divided(matrix, div):
                                             if div != 0:
                                                 try:
                                                     new_element = round(elements / div, 2)
-                                                    new_matrix.append(new_element)
+                                                    new_row.append(new_element)
                                                 except Exception:
                                                     raise ZeroDivisionError(div_zero_error)
                                             else:
@@ -42,6 +43,7 @@ def matrix_divided(matrix, div):
                                     raise TypeError(matrix_error)
                             else:
                                 raise TypeError(matrix_error)
+                        new_matrix.append(new_row)
                     except Exception:
                         raise TypeError(row_error)
                 else:
