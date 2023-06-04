@@ -19,3 +19,13 @@ class TestMaxInteger(unittest.TestCase):
     def test_positive_negative_numbers(self):
         my_list = [1, 100, 89, 200, -12, -56, -89]
         self.assertEqual(max_integer(my_list), 200)
+
+    #test for numbers and atring except TypeError
+    def test_numbers_and_strings(self):
+        my_list = [10, 9, 98, 20, "Isaac"]
+        self.assertRaises(TypeError, max_integer, my_list)
+
+    #test for None as argument to max_integer
+    def test_none(self):
+        my_list = None
+        self.assertRaises(TypeError, max_integer, my_list)
