@@ -21,7 +21,7 @@ def matrix_divided(matrix, div):
             raise TypeError(matrix_error)
     else:
         matrix = matrix
-        
+
     if type(matrix[0]) is not list and len(matrix) > 0:
         try:
             raise TypeError(matrix_error)
