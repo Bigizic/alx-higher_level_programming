@@ -20,12 +20,22 @@ class TestMaxInteger(unittest.TestCase):
         my_list = [1, 100, 89, 200, -12, -56, -89]
         self.assertEqual(max_integer(my_list), 200)
 
-    #test for numbers and atring except TypeError
+    #test for numbers and string expect TypeError
     def test_numbers_and_strings(self):
         my_list = [10, 9, 98, 20, "Isaac"]
         self.assertRaises(TypeError, max_integer, my_list)
 
-    #test for None as argument to max_integer
+    #test for None as argument to max_integer expect TypeError
     def test_none(self):
         my_list = None
         self.assertRaises(TypeError, max_integer, my_list)
+
+    #test for symbols and some data types expect TypeError
+    def test_all_types(self):
+        my_list = [1, "Isaac", 3.142, True, None]
+        self.assertRaises(TypeError, max_integer, my_list)
+
+    #test for float types
+    def test_float_types(self):
+        my_list = [3.14, 8.95, 1.56]
+        self.assertEqual(max_integer(my_list), 8.95)
