@@ -30,7 +30,7 @@ class TestMaxInteger(unittest.TestCase):
         my_list = None
         self.assertRaises(TypeError, max_integer, my_list)
 
-    #test for symbols and some data types expect TypeError
+    #test for some data types expect TypeError
     def test_all_types(self):
         my_list = [1, "Isaac", 3.142, True, None]
         self.assertRaises(TypeError, max_integer, my_list)
