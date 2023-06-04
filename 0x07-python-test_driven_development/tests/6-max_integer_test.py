@@ -39,3 +39,8 @@ class TestMaxInteger(unittest.TestCase):
     def test_float_types(self):
         my_list = [3.14, 8.95, 1.56]
         self.assertEqual(max_integer(my_list), 8.95)
+
+    #test for positive numbers
+    def test_positive_numbers(self):
+        my_list = [1, 2, 3, 4, 100, 8, 4]
+        self.assertEqual(max_integer(my_list), 100)
