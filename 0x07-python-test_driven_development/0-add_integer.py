@@ -5,6 +5,7 @@ Parameters:
     b(int or float) types: The second number
 """
 
+
 def add_integer(a, b=98):
     """
     Function that adds two numbers
