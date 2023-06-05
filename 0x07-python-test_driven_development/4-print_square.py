@@ -1,14 +1,20 @@
 #!/usr/bin/python3
 """Print Square Module
-a function that prints a square with the character #
-(size) is the size length of the square
-size must be an integer, otherwise raise a TypeError
-if size is less than 0, raise a ValueError
-if size is a float and is less than 0, raise a TypeError
+
+Parameters:
+    size (int) is the size length of the square
 """
 
 
 def print_square(size):
+    """
+    A function that prints a square with the character # multiplied by size
+    Raises:
+        TypeError
+        ValueError
+    Return:
+        void
+    """
     if type(size) is float and size < 0:
         try:
             raise TypeError("size must be an integer")
