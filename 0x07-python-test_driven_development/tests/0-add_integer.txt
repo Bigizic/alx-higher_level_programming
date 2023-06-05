@@ -1,7 +1,19 @@
 """
 The add_integer doctest
 
-import add_integer function from 0-add_integer
+This function takes two integer arg, 'a' and 'b' and return the sum
+
+parameters:
+    a (int): The first integer
+    b (int): The second integer
+
+    Returns: the sum of a and b
+
+    Raises TypeError if either a or b is not an integer
+"""
+
+"""
+import add_intger function from 0-add_integer file
 """
 >>> add_integer = __import__('0-add_integer') .add_integer
 
