@@ -1,11 +1,24 @@
 #!/usr/bin/python3
 """Unittest for max_integer([..])
+
+Parameters:
+    self
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
+    """Text Cases:
+        test for empty list, should return None
+        test for negative numbers
+        test for positive and negative numbers
+        test for numbers and string expect TypeError
+        test for None as argument to max_integer expect TypeError
+        test for some data types expect TypeError
+        test for float types
+        test for positive numbers
+    """
     # test for empty list, should return None
     def test_empty_list(self):
         empty_list = []
