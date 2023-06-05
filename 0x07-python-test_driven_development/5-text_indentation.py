@@ -1,11 +1,21 @@
 #!/usr/bin/python3
 """Text Indentation Module
-a function that prints a text with 2 new lines after each of these
-characters: ., ? and :
+
+Parameters:
+    text (str) text to trunicate and search for characters
 """
 
 
 def text_indentation(text):
+    """
+    A function that prints a text with 2 new lines after each of these
+    characters: ., ? and :
+
+    Raise:
+        TypeError
+    Return:
+        void
+    """
     if type(text) is not str:
         try:
             raise TypeError("text must be a string")
