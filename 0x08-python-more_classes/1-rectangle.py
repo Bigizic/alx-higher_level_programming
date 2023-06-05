@@ -7,6 +7,7 @@ Parameters:
     height (int) height of rectangle
 """
 
+
 class Rectangle:
     """Rectangle Class"""
 
