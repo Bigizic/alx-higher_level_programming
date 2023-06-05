@@ -55,17 +55,18 @@ class Rectangle:
 
     def perimeter(self):
         """Returns the rectangle perimeter"""
-        if self.rectangle_height is 0 or self.rectangle_width is 0:
+        if self.rectangle_height == 0 or self.rectangle_width == 0:
             return 0
         return 2 * (self.rectangle_height + self.rectangle_width)
 
     def __str__(self):
-        if self.rectangle_height is 0 or self.rectangle_width is 0:
+        if self.rectangle_height == 0 and self.rectangle_width == 0:
             return ""
-        else:
-            rec_str = ""
+        rec_str = ""
+        if self.rectangle_height > 0 and self.rectangle_width > 0:
             for i in range(self.rectangle_height):
                 rec_str += str(self.print_symbol) * self.rectangle_width + "\n"
+
         return rec_str[:-1]
 
     def __repr__(self):
@@ -77,12 +78,13 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        if not isinstance(rect_1, Rectangle):
+        if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
+        if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return rect_1
+        if rect_2.area() > rect_1.area():
+            return rect_2
+        return rect_1
 
     @classmethod
     def square(cls, size=0):
