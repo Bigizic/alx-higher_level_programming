@@ -1,14 +1,21 @@
 #!/usr/bin/python3
 """Matrix Division Module
-a function that divides all elements of a matrix
-
-Parameters:
+parameters:
     matrix(list of intgers or float)
     div(integer or float)
 """
 
 
 def matrix_divided(matrix, div):
+    """
+    a function that divides all elements of a matrix by a float or int
+    Raises:
+        TypeError
+        ZeroDivisionError
+    Return:
+        new matrix
+    """
+
     matrix_error = "matrix must be a matrix (list of lists) of integers/floats"
     row_error = "Each row of the matrix must have the same size"
     div_number_error = "div must be a number"
