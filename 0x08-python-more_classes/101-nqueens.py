@@ -58,8 +58,9 @@ class NQueensSolver:
                 group.pop(len(group) - 1)
 
     def get_solutions(self):
-        self.pos = list(map(lambda x:
-            [x // self.n, x % self.n], range(self.n ** 2)))
+        self.pos = list(map(
+            lambda x: [x // self.n, x % self.n], range(self.n ** 2))
+        )
         a = 0
         group = []
         self.build_solution(a, group)
