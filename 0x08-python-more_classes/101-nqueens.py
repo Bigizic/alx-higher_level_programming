@@ -53,9 +53,8 @@ class NQueensSolver:
                         matches
                     )
                 group.append(self.pos[a].copy())
-                if not any(used_positions): self.build_solution(
-                        row + 1, group
-                    )
+                if not any(used_positions):
+                    self.build_solution(row + 1, group)
                 group.pop(len(group) - 1)
 
     def get_solutions(self):
