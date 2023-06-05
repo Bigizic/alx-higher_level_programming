@@ -1,8 +1,11 @@
-The ``Text indentation`` doctest
+The Text indentation doctest
+================================
 
+first import text_identation function from 5-text_indentation
+-------------------------------------------------------------
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-Test Files:
+Now use it:
 
 	>>> text_indentation(1)
 	Traceback (most recent call last):

@@ -1,8 +1,11 @@
-The ``Print Square`` doctest
+The Print Square doctest
+============================
 
+First import print_square function from 4-print_square
+------------------------------------------------------
 >>> print_square = __import__('4-print_square').print_square
 
-Test Files:
+Now use it:
 
 	>>> print_square(0)
 
