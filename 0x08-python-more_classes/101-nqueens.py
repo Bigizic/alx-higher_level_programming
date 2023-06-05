@@ -48,14 +48,16 @@ class NQueensSolver:
             for col in range(self.n):
                 a = (row * self.n) + col
                 matches = zip(list([self.pos[a]]) * len(group), group)
-                used_positions = map(lambda x: self.is_attacking(x[0], x[1]), matches)
+                used_positions = map(lambda x:
+                        self.is_attacking(x[0], x[1]), matches)
                 group.append(self.pos[a].copy())
                 if not any(used_positions):
                     self.build_solution(row + 1, group)
                 group.pop(len(group) - 1)
 
     def get_solutions(self):
-        self.pos = list(map(lambda x: [x // self.n, x % self.n], range(self.n ** 2)))
+        self.pos = list(map(lambda x:
+            [x // self.n, x % self.n], range(self.n ** 2)))
         a = 0
         group = []
         self.build_solution(a, group)
