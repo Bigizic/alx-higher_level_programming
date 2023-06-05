@@ -1,9 +1,10 @@
-The `add_integer` doctest
+"""
+The add_integer doctest
+"""
 
->>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer = __import__ ('0-add_integer').add_integer
 
 Test files:
-
 >>> add_integer(1, 2)
 3
 
