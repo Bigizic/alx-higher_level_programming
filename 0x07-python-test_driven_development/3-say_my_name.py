@@ -14,6 +14,8 @@ def say_my_name(first_name, last_name=""):
 
     Raises:
         TypeError
+    Return:
+        void
     """
     if type(first_name) is not str:
         try:
