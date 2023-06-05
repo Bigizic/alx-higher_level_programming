@@ -49,7 +49,7 @@ class NQueensSolver:
                 a = (row * self.n) + col
                 matches = zip(list([self.pos[a]]) * len(group), group)
                 used_positions = (map(lambda x: self.is_attacking
-                    (x[0], x[1]),matches))
+                    (x[0], x[1]), matches))
                 group.append(self.pos[a].copy())
                 if not any(used_positions):
                     self.build_solution(row + 1, group)
