@@ -60,8 +60,6 @@ class Rectangle:
         return 2 * (self.rectangle_height + self.rectangle_width)
 
     def __str__(self):
-        if self.rectangle_height == 0 and self.rectangle_width == 0:
-            return ""
         rec_str = ""
         if self.rectangle_height > 0 and self.rectangle_width > 0:
             for i in range(self.rectangle_height):
