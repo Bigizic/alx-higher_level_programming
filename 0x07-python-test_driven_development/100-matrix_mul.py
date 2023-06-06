@@ -44,7 +44,7 @@ def matrix_mul(m_a, m_b):
     """Check if both matrics have the same length of row"""
     if len(set(len(row) for row in m_a)) != 1:
         raise TypeError(ma_rows_error)
-    
+
     if len(set(len(row) for row in m_b)) != 1:
         raise TypeError(mb_rows_error)
 
@@ -67,7 +67,7 @@ def matrix_mul(m_a, m_b):
                 result[i][j] += m_a[i][k] * m_b[k][j]
 
     """Extra check to round the float types to 2 decimal places"""
-    for i in range (len(result)):
+    for i in range(len(result)):
         for j in range(len(result[0])):
             if isinstance(result[i][j], float):
                 result[i][j] = round(result[i][j], 2)
