@@ -47,11 +47,11 @@ def matrix_mul(m_a, m_b):
     
     if len(set(len(row) for row in m_b)) != 1:
         raise TypeError(mb_rows_error)
-    
+
     """Get row and column of matrix a"""
     row_a = len(m_a)
     col_a = len(m_a[0])
-    
+
     """Get row and column of matrix b"""
     row_b = len(m_b)
     col_b = len(m_b[0])
@@ -65,4 +65,10 @@ def matrix_mul(m_a, m_b):
         for j in range(col_b):
             for k in range(col_a):
                 result[i][j] += m_a[i][k] * m_b[k][j]
+
+    """Extra check to round the float types to 2 decimal places"""
+    for i in range (len(result)):
+        for j in range(len(result[0])):
+            if isinstance(result[i][j], float):
+                result[i][j] = round(result[i][j], 2)
     return result
