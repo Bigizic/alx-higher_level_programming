@@ -1,4 +1,4 @@
-The Text indentation doctest
+The Text-indentation doctest
 ================================
 
 first import text_identation function from 5-text_indentation
