@@ -19,27 +19,49 @@ def matrix_mul(m_a, m_b):
     mb_rows_error = "each row of m_b must be of the same size"
     mul_error = "m_a and m_b can't be multiplied"
 
-    """Get row and column of matrix a"""
-    row_a = len(m_a[0])
-    col_a = len(m_a)
+    """List type error checks"""
+    if type(m_a) is not list or not all(isinstance(row, list) for row in m_a):
+        raise TypeError(ma_list_error)
 
-    """Get row and column of matrix b"""
-    row_b = len(m_b[0])
-    col_b = len(m_b)
+    if type(m_b) is not list or not all(isinstance(row, list) for row in m_b):
+        raise TypeError(mb_list_error)
 
-    if row_a != col_a:
+    """Empty list error check"""
+    if len(m_a) == 0:
+        raise ValueError(ma_empty_list)
+
+    if len(m_b) == 0:
+        raise ValueError(mb_empty_list)
+
+    """Check if all elements in both matrics are float or int types"""
+    if not all(isinstance(num, (int, float)) for row in m_a for num in row):
+        raise TypeError(ma_wrong_type)
+
+    if not all(isinstance(num, (int, float)) for row in m_b for num in row):
+        raise TypeError(mb_wrong_type)
+
+    """Check if both matrics have the same length of row"""
+    if len(set(len(row) for row in m_a)) != 1:
         raise TypeError(ma_rows_error)
-    if row_b != col_b:
+    
+    if len(set(len(row) for row in m_b)) != 1:
         raise TypeError(mb_rows_error)
+    
+    """Get row and column of matrix a"""
+    row_a = len(m_a)
+    col_a = len(m_a[0])
+    
+    """Get row and column of matrix b"""
+    row_b = len(m_b)
+    col_b = len(m_b[0])
 
-    if row_a != col_b:
+    if col_a != row_b:
         raise ValueError(mul_error)
 
-    result = [[0 for i in range(row_b)] for i in range(col_a)]
+    result = [[0 for i in range(col_b)] for i in range(row_a)]
 
-    for items in range(col_a):
-        for _item in range(row_b):
-            for k in range(row_a):
-                result[items][_item] += m_a[items][k] * m_b[k][_item]
-    for row in result:
-        return row
+    for i in range(row_a):
+        for j in range(col_b):
+            for k in range(col_a):
+                result[i][j] += m_a[i][k] * m_b[k][j]
+    return result
