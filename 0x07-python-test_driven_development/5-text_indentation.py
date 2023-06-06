@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Text Indentation Module
+"""A text-Indentation Module
 
 Parameters:
     text (str) text to trunicate and search for characters
