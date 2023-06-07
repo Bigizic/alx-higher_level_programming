@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Numpy list multiplication module"""
 import numpy as np
 
 
