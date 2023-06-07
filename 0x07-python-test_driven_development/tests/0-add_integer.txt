@@ -30,7 +30,7 @@ Now use it:
 	...
 	TypeError: a must be an integer
 
-	>>> add_integer("me", "ore")
+	>>> add_integer("IS", "OK")
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
@@ -47,3 +47,8 @@ Now use it:
 
 	>>> add_integer(0)
 	98
+
+	>>> add_integer(2, None)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
