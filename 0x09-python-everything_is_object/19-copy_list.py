@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-
 def copy_list(l):
-    new = []
-return new.append(l)
+    return [elements for elements in l]
