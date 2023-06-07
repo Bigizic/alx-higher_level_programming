@@ -58,3 +58,18 @@ class TestMaxInteger(unittest.TestCase):
     def test_positive_numbers(self):
         my_list = [1, 2, 3, 4, 100, 8, 4]
         self.assertEqual(max_integer(my_list), 100)
+
+    # test for positive numbers in reversed
+    def test_positive_numbers_reversed(self):
+        my_list = [4, 1, 2, 3]
+        self.assertEqual(max_integer(my_list), 4)
+
+    # test for positive infinity
+    def positive_infinity(self):
+        my_list = [1, 2, 3, float('inf'), 100]
+        self.assertEqual(max_integer(my_list), float('inf'))
+
+    # test for negative infinity
+    def negative_infinity(self):
+        my_list = [1, 2, 3, -float('inf'), 100]
+        self.assertEqual(max_integer(my_list), 100)
