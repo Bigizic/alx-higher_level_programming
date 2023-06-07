@@ -65,11 +65,16 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(my_list), 4)
 
     # test for positive infinity
-    def positive_infinity(self):
+    def test_positive_infinity(self):
         my_list = [1, 2, 3, float('inf'), 100]
         self.assertEqual(max_integer(my_list), float('inf'))
 
     # test for negative infinity
-    def negative_infinity(self):
+    def test_negative_infinity(self):
         my_list = [1, 2, 3, -float('inf'), 100]
         self.assertEqual(max_integer(my_list), 100)
+
+    # test when length of list is one
+    def test_when_length_of_list_is_one(self):
+        my_list = [10]
+        self.assertEqual(max_integer(my_list), 10 )
