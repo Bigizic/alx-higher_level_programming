@@ -1,10 +1,4 @@
 #!/usr/bin/python3
-"""A lazy Matrix Multiplication Module
-
-Parameters:
-    m_a (list) int or float types
-    m_b (list) int or float types
-"""
 import numpy as np
 
 
