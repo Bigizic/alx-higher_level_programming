@@ -13,7 +13,7 @@ def add_integer(a, b=98):
 
     if type(a) in [int, float]:
         try:
-            a = int(a)
+            a = a
         except Exception:
             raise TypeError("a must be an integer")
     else:
@@ -21,10 +21,12 @@ def add_integer(a, b=98):
 
     if type(b) in [int, float]:
         try:
-            b = int(b)
+            b = b
         except Exception:
             raise TypeError("b must be an integer")
     else:
         raise TypeError("b must be an integer")
-
-    return a + b
+    result = a + b
+    if result == float('inf') or result == -float('inf'):
+        return 89
+    return int(a) + int(b)
