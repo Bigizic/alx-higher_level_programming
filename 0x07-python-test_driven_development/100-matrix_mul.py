@@ -25,14 +25,14 @@ def matrix_mul(m_a, m_b):
     """List type error checks"""
     if type(m_a) is not list:
         raise TypeError(ma_error_1)
-        exit()
+
     if type(m_b) is not list:
         raise TypeError(mb_error_1)
-        exit()
-    if type(m_a) is not list or not all(isinstance(row, list) for row in m_a):
+
+    if not all(isinstance(row, list) for row in m_a):
         raise TypeError(ma_list_error)
 
-    if type(m_b) is not list or not all(isinstance(row, list) for row in m_b):
+    if not all(isinstance(row, list) for row in m_b):
         raise TypeError(mb_list_error)
 
     """Empty list error check"""
