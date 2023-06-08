@@ -52,14 +52,14 @@ Now lets use it:
 	>>> matrix_mul([[]], [[]])
 	Traceback (most recent call last):
 	...
-	ValueError: m_a and m_b can't be multiplied
+	ValueError: m_a can't be empty
 
 	>>> matrix_mul([], [])
 	Traceback (most recent call last):
 	...
 	ValueError: m_a can't be empty
 
-	>>> matrix_mul([[]], [])
+	>>> matrix_mul([[3.5, 8.0,], [4.9, 2.0]], [])
 	Traceback (most recent call last):
 	...
 	ValueError: m_b can't be empty
@@ -67,7 +67,7 @@ Now lets use it:
 	>>> matrix_mul([[3.5, 8.0,], [4.9, 2.0]], [[]])
 	Traceback (most recent call last):
 	...
-	ValueError: m_a and m_b can't be multiplied
+	ValueError: m_b can't be empty
 
 	>>> matrix_mul([[1, 2], [3, 4]], [[1, None], [3, 4]])
 	Traceback (most recent call last):
