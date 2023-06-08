@@ -9,7 +9,7 @@ Parameters:
 
 
 def matrix_mul(m_a, m_b):
-    # Errors to display
+    """Errors to display"""
     ma_error_1 = "m_a must be a list"
     mb_error_1 = "m_b must be a list"
     ma_list_error = "m_a must be a list of lists"
