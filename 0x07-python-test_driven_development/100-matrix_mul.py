@@ -10,6 +10,8 @@ Parameters:
 
 def matrix_mul(m_a, m_b):
     """Displayed Errors"""
+    ma_error_1 = "m_a must be a list"
+    mb_error_1 = "m_b must be a list"
     ma_list_error = "m_a must be a list of lists"
     mb_list_error = "m_b must be a list of lists"
     ma_empty_list = "m_a can't be empty"
@@ -21,6 +23,12 @@ def matrix_mul(m_a, m_b):
     mul_error = "m_a and m_b can't be multiplied"
 
     """List type error checks"""
+    if type(m_a) is not list:
+        raise TypeError(ma_error_1)
+        exit()
+    if type(m_b) is not list:
+        raise TypeError(mb_error_1)
+        exit()
     if type(m_a) is not list or not all(isinstance(row, list) for row in m_a):
         raise TypeError(ma_list_error)
 
