@@ -29,10 +29,10 @@ def matrix_mul(m_a, m_b):
     if type(m_b) is not list:
         raise TypeError(mb_error_1)
 
-    if not all(isinstance(row, list) for row in m_a):
+    if type(m_a) is not list and not all(isinstance(row, list) for row in m_a):
         raise TypeError(ma_list_error)
 
-    if not all(isinstance(row, list) for row in m_b):
+    if type(m_b) is not list and not all(isinstance(row, list) for row in m_b):
         raise TypeError(mb_list_error)
 
     """Empty list error check"""
