@@ -14,7 +14,7 @@ Return:
 
 def is_same_class(obj, a_class):
     """is_same_class implementation"""
-    if type (obj) is not a_class:
+    if type(obj) is not a_class:
         return False
     else:
         return True
