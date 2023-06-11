@@ -22,10 +22,11 @@ class BaseGeometry:
     n = "must be greater than 0"
 
     def area(self):
-        """Raises exception message"""
+        """Raise exception message"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """Raises TypeError and ValueError"""
         if type(value) is not int:
             raise TypeError("{} {}" .format(name, self.m))
 
