@@ -1,30 +1,57 @@
 MyList doctest
 
-lets import MyList Class:
+import function from the module:
 
-MyList = __import__('1-my_list').MyList
+	>>> MyList = __import__('1-my_list').MyList
 
 use it:
-	>>> MyList.append(1)
-	[1]
 
-	>>> MyList.append([])
-	Traceback (most recent call last):
-	...
-	TypeError: '<' not supported between instances of 'int' and 'list'
+checking for module docstring:
+	>>> test_1 = __import__('1-my_list').__doc__
+	>>> len(test_1) > 1
+	True
 
-	>>> MyList.append([42])
-	Traceback (most recent call last):
-	...
-	TypeError: '<' not supported between instances of 'int' and 'list'
+checking for class docstring:
+	>>> test_2 = __import__('1-my_list').MyList.__doc__
+	>>> len(test_2) > 1
+	True
 
+checking for method docstring:
+	>>> test_3 = __import__('1-my_list').MyList.print_sorted.__doc__
+	>>> len(test_3) > 1
+	True
 
-	>>> MyList.append(None)
-	Traceback (most recent call last):
-	...
-	TypeError: '<' not supported between instances of 'int' and 'NoneType'
+checking that MyList inherits from list:
+	>>> issubclass(MyList, list)
+	True
 
-	>>> MyList.append(1, 2, 3)
-	Traceback (most recent call last):
-	...
-	TypeError: append() takes exactly one argument (3 given)
+checking for empty list:
+	>>> test_4 = MyList()
+	>>> test_4.print_sorted()
+	[]
+
+checking if appending works:
+	>>> test_4.append(1)
+	>>> test_4.append(2)
+	>>> test_4.append(3)
+	>>> test_4.append(4)
+	>>> print(test_4)
+	[1, 2, 3, 4]
+
+checking for list in order:
+	>>> test_4.print_sorted()
+	[1, 2, 3, 4]
+
+checking for reversed order list:
+	>>> test_4 = MyList()
+	>>> test_4.append(4)
+	>>> test_4.append(3)
+	>>> test_4.append(2)
+	>>> test_4.append(1)
+	>>> print(test_4)
+	[4, 3, 2, 1]
+	>>> test_4.print_sorted()
+	[1, 2, 3, 4]
+	>>> print(test_4)
+	[4, 3, 2, 1]
+
