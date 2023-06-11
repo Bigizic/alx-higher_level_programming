@@ -19,20 +19,20 @@ class Rectangle(BaseGeometry):
     """
     
     def __init__(self, width, height):
-    """constructor
-    """
-    self.integer_validator("width", width)
-    self.integer_validator("height", height)
-    self.my_width = width
-    self.my_height = height
-    
+        """Constructor
+        """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.my_width = width
+        self.my_height = height
+
     def __str__(self):
-    """Returns description
-    """
-    return ("[Rectangle] {}/{}" .format(self.my_width, self.my_height))
+        """Returns description
+        """
+        return ("[Rectangle] {}/{}" .format(self.my_width, self.my_height))
 
     def area(self):
-    """Prints area of rectangle
-    """
-    result = self.my_width * self.my_height
-    print(result)
+        """returns area of rectangle
+        """
+        result = self.my_width * self.my_height
+        return result
