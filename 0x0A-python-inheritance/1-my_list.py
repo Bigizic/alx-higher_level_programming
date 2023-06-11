@@ -12,7 +12,11 @@ Return:
 
 
 class MyList(list):
-    """MyList Class"""
+    """Subclass of list"""
+    def __init__(self):
+        """Constructor"""
+        super().__init__()
 
     def print_sorted(self):
+        """Print the sorted list"""
         print(sorted(self))
