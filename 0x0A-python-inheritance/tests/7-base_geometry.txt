@@ -33,3 +33,29 @@ use it:
 	>>> tests.integer_validator("n", -4)
 	Traceback (most recent call last):
 	ValueError: n must be greater than 0
+
+	>>> tests.integer_validator("n", [1, 2, 3])
+	Traceback (most recent call last):
+	TypeError: n must be an integer
+
+	>>> tests.integer_validator("n", (1, 2, 3))
+	Traceback (most recent call last):
+	TypeError: n must be an integer
+
+	>>> tests.integer_validator("n", {1, 2, 3})
+	Traceback (most recent call last):
+	TypeError: n must be an integer
+
+	>>> tests.integer_validator("n", True)
+	Traceback (most recent call last):
+	TypeError: n must be an integer
+
+	>>> tests.integer_validator("n", None)
+	Traceback (most recent call last):
+	TypeError: n must be an integer
+
+	>>> tests.integer_validator("n", 1)
+
+	>>> tests.integer_validator("n", (1))
+
+	>>> tests.integer_validator("", 1)
