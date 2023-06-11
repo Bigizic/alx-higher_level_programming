@@ -15,7 +15,7 @@ Return:
 
 def inherits_from(obj, a_class):
     """inherits_from implementation"""
-    if type(obj) is not a_class or isinstance(obj, a_class):
+    if type(obj) is not a_class or not isinstance(obj, a_class):
         return True
     else:
         return False
