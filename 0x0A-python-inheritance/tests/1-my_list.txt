@@ -55,3 +55,12 @@ checking for reversed order list:
 	>>> print(test_4)
 	[4, 3, 2, 1]
 
+checking for negative number:
+	>>> test_4.append(-1)
+	>>> test_4.append(8)
+	>>> print(test_4)
+	[4, 3, 2, 1, -1, 8]
+	>>> test_4.print_sorted()
+	[-1, 1, 2, 3, 4, 8]
+	>>> print(test_4)
+	[4, 3, 2, 1, -1, 8]
