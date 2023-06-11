@@ -14,6 +14,7 @@ Return:
 
 
 def is_kind_of_class(obj, a_class):
+    """is_kind_of_class implementation"""
     if type(obj) is a_class or isinstance(obj, a_class):
         return True
     else:
