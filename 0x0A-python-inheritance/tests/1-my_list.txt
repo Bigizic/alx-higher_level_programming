@@ -1,0 +1,30 @@
+MyList doctest
+
+lets import MyList Class:
+
+MyList = __import__('1-my_list').MyList
+
+use it:
+	>>> MyList.append(1)
+	[1]
+
+	>>> MyList.append([])
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'int' and 'list'
+
+	>>> MyList.append([42])
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'int' and 'list'
+
+
+	>>> MyList.append(None)
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'int' and 'NoneType'
+
+	>>> MyList.append(1, 2, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: append() takes exactly one argument (3 given)
