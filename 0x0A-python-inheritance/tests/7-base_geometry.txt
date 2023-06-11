@@ -1,0 +1,35 @@
+BaseGeometry doctest
+=====================
+
+import class from the module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+use it:
+
+	>>> tests = BaseGeometry()
+	>>> type(tests)
+	<class '7-base_geometry.BaseGeometry'>
+
+	>>> tests.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+	>>> tests.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	>>> tests.integer_validator("Name", 0)
+	Traceback (most recent call last):
+	ValueError: Name must be greater than 0
+
+	>>> tests.integer_validator("Age", "Name")
+	Traceback (most recent call last):
+	TypeError: Age must be an integer
+
+	>>> tests.integer_validator("m", 3.142)
+	Traceback (most recent call last):
+	TypeError: m must be an integer
+
+	>>> tests.integer_validator("n", -4)
+	Traceback (most recent call last):
+	ValueError: n must be greater than 0
