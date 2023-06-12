@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """Class Module
 A class MyInt that inherits frm int
+MyInt is a rebel. MyInt has == and != operators inverted
 
 Parameters:
-    Void
+    value (int) value to compare
+    other (int) value to compare
 
 Return:
-    Void
+    (False) if int value is != other
+    (True) otherwise
 """
 
 
