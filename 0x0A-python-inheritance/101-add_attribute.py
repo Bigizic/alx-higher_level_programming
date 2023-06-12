@@ -5,7 +5,7 @@ Parameters:
     Void
 
 Raises:
-    TypeError("can't add new attribute")  if the object can’t 
+    TypeError("can't add new attribute")  if the object can’t
     have new attribute
 
 Return:
