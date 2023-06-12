@@ -27,4 +27,3 @@ class MyInt(int):
         """Returns True
         """
         return self.value == other
-
