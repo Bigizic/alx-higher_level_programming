@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """A function that returns True if the object is an instance of a class
-that inherited (directly or indirectly) from the specified class,
+that inherited (directly or indirectly) frm the specified class,
 otherwise False
 
 Parameters:
@@ -14,7 +14,7 @@ Return:
 
 
 def inherits_from(obj, a_class):
-    """inherits_from implementation"""
+    """implementation"""
     if type(obj) is not a_class or not isinstance(obj, a_class):
         return True
     else:
