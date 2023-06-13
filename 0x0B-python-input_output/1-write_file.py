@@ -7,10 +7,10 @@ Parameters:
     text (str) text to be written
 
 Raises:
-    number of characters written
+    void
 
 Return:
-    void
+    number of characters written
 """
 
 
