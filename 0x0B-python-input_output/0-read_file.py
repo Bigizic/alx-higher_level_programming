@@ -20,5 +20,5 @@ def read_file(filename=""):
     """
     open_file = open(filename)  # Open file
     read_file = open_file.read()  # put opened file in read mode
-    print(read_file)  # print opened file to stdout
+    print(read_file, end="")  # print opened file to stdout
     open_file.close()  # close file after open operation
