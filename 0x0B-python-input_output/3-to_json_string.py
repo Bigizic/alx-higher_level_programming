@@ -15,5 +15,7 @@ Return:
 
 
 def to_json_string(my_obj):
+    """Implementation
+    """
     result = json.dumps(my_obj, sort_keys=True)
     return result
