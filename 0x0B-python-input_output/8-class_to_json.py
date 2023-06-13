@@ -15,5 +15,7 @@ Return:
 
 
 def class_to_json(obj):
+    """Implementation
+    """
     a = vars(obj)
     return a
