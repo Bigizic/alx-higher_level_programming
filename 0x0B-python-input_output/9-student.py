@@ -14,7 +14,7 @@ Raises:
     Void
 
 Return:
-    Void
+    a dictionary representation of a Student instance
 """
 
 
