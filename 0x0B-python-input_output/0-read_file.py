@@ -13,12 +13,8 @@ Return:
 
 
 def read_file(filename=""):
-    """Implementati
-    qojfowfw
-    wfojewfeiofe
-    wfihwlfkhws
+    """Implementation
     """
-    open_file = open(filename)  # Open file
-    read_file = open_file.read()  # put opened file in read mode
-    print(read_file, end="")  # print opened file to stdout
-    open_file.close()  # close file after open operation
+    with open(filename, "r") as open_file:  # Open file
+        read_file = open_file.read()  # put opened file in read mode
+        print(read_file, end="")  # print opened file to stdout
