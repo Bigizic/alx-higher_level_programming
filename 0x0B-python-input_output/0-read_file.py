@@ -13,6 +13,11 @@ Return:
 
 
 def read_file(filename=""):
+    """Implementati
+    qojfowfw
+    wfojewfeiofe
+    wfihwlfkhws
+    """
     open_file = open(filename)  # Open file
     read_file = open_file.read()  # put opened file in read mode
     print(read_file)  # print opened file to stdout
