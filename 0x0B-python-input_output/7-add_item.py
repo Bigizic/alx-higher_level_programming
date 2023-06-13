@@ -31,7 +31,7 @@ argument = []
 
 try:
     argument = load_from_json_file(filename)
-except:
+except Exception:
     argument = []
 
 for items in stdin_arg:
