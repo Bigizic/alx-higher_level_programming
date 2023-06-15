@@ -128,7 +128,21 @@ class Rectangle(Base):
         b = self.__y
 
         for i in range(b):
-            print("\n", end="")
+            print()
 
         for i in range(y):
             print(" " * a + "#" * x)
+
+    def update(self, *args):
+        """Assigns an argument to each attribute
+        """
+        self.id = args[0]
+        length = len(args)
+        if length >= 2:
+            self.__width = args[1]
+        if length >= 3:
+            self.__height = args[2]
+        if length >= 4:
+            self.__x = args[3]
+        if length >=5:
+            self.__y = args[4]
