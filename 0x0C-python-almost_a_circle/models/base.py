@@ -167,7 +167,7 @@ class Base:
                 _shape.forward(rect.width)
                 _shape.left(90)
                 _shape.forward(rect.height)
-                _shape.lefrt(90)
+                _shape.left(90)
             _shape.hideturtle()
 
         _shape.color("blue")
@@ -179,7 +179,7 @@ class Base:
             for i in range(2):
                 _shape.forward(s.width)
                 _shape.left(90)
-                _shape.forqward(s.height)
+                _shape.forward(s.height)
                 _shape.left(90)
             _shape.hideturtle()
 
