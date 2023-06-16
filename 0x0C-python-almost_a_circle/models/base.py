@@ -42,8 +42,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON representation of list_objs to a file, Also
-        has the serialization behaviour
+        """Writes the JSON representation of list_objs to a file, Has
+        the serialization behaviour
         """
         if not list_objs:
             return []
@@ -94,7 +94,7 @@ class Base:
         """Returns a list of instances
         If the file doesn't exit return an empty list
         otherwise a list of instances, must use from_json_string()
-        and create(). Also has the deserialization behaviour
+        and create(). Has the deserialization behaviour
         """
         filename = cls.__name__ + ".json"
         if not os.path.exists(filename):
