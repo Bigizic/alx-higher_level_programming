@@ -60,3 +60,12 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, "w") as open_file:
             open_file.write(string_rep)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string representation
+        """
+        if json_string is None or len(json_string) == 0:
+            return ("[]")
+        else:
+            return json.loads(json_string)
