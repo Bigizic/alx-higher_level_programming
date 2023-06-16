@@ -14,6 +14,7 @@ Return:
 """
 
 import json
+import os
 
 
 class Base:
@@ -95,7 +96,7 @@ class Base:
         and create()
         """
         filename = cls.__name__ + ".json"
-        if not filename:
+        if not os.path.exists(filename):
             return []
         else:
             with open(filename, "r") as open_file:
