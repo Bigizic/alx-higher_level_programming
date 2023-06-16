@@ -81,7 +81,7 @@ class Base:
         dummy instance passing the dictionary arguments to it.
         By following this approach a new instance of the class with
         custom attributes values without explicitly specifying each
-        attribute separately
+        attribute separately is created
         """
         dummy_instance = cls(1, 2)
         dummy_instance.update(**dictionary)
