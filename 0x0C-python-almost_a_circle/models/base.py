@@ -128,7 +128,7 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Mimicks the behavior of the JSON deserialization
-        Return a list of instantiated classes from a CSV file
+        Return a list of classes from a CSV file
         """
         class_name = ["id", "width", "height", "x", "y"]
         if cls.__name__ == "Square":
