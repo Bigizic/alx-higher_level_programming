@@ -153,28 +153,40 @@ class Base:
             list_rectangles (list) list of rectangle object to draw
             list_squares (list) list or Square object to draw
         """
-        s = turtle.Turtle()
-        s.screen.bgcolor("black")
-        s.penup()
-        s.shape("turtle")
-        s.color("white")
-        s.goto(-200, 200)
-        for rect in list_rectangles:
-            s.goto(s.xcor() + (rect.width + 20), s.ycor() - (rect.height + 20))
-            for items in range(2):
-                s.forward(rect.width)
-                s.left(90)
-                s.forward(rect.height)
-                s.left(90)
-            s.penup()
+        screen = turtle.Screen()
+        screen.bgcolor("black")
 
-        s.goto(-200, 200)
-        for sq in list_squares:
-            s.goto(s.xcor() + (sq.width + 20), s.ycor() - (sq.height + 20))
+        def draw_rectangle(rectangle):
+            t = turtle.Turtle()
+            t.shape("turtle")
+            t.color("white")
+            t.penup()
+            t.goto(rectangle.x, rectangle.y)
+            t.pendown()
             for i in range(2):
-                s.forward(sq.width)
-                s.left(90)
-                s.forward(sq.height)
-                s.left(90)
+                t.forward(rectangle.width)
+                t.left(90)
+                t.forward(rectangle.height)
+                t.left(90)
+            t.penup()
+            t.hideturtle()
 
-        s.screen.exitonclick()
+        def draw_square(square):
+            t = turtle.Turtle()
+            t.shape("turtle")
+            t.color("white")
+            t.penup()
+            t.goto(square.x, square.y)
+            t.pendown()
+            for i in range(4):
+                t.forward(square.size)
+                t.left(90)
+            t.penup()
+            t.hideturtle()
+        for rectangle in list_rectangle:
+            draw_rectangle(rectangle)
+
+        for square in list_square:
+            draw_square(square)
+
+        turtle.done()
