@@ -153,31 +153,28 @@ class Base:
             list_rectangles (list) list of rectangle object to draw
             list_squares (list) list or Square object to draw
         """
-        _shape = turtle.Turtle()
-        _shape.screen.bgcolor("black")
-        _shape.penup()
-        _shape.shape("turtle")
-        _shape.color("white")
-        _shape.goto(-200, 200)
+        s = turtle.Turtle()
+        s.screen.bgcolor("black")
+        s.penup()
+        s.shape("turtle")
+        s.color("white")
+        s.goto(-200, 200)
         for rect in list_rectangles:
-            _shape.goto(_shape.xcor() + (rect.width + 20), _shape.ycor()
-                    - (rect.height + 20))
+            s.goto(s.xcor() + (rect.width + 20), s.ycor() - (rect.height + 20))
             for items in range(2):
-                _shape.forward(rect.width)
-                _shape.left(90)
-                _shape.forward(rect.height)
-                _shape.left(90)
-            _shape.penup()
+                s.forward(rect.width)
+                s.left(90)
+                s.forward(rect.height)
+                s.left(90)
+            s.penup()
 
-        _shape.goto(-200, 200)
+        s.goto(-200, 200)
         for sq in list_squares:
-            _shape.goto(_shape.xcor() + (sq.width + 20), _shape.ycor()
-                    - (sq.height + 20))
+            s.goto(s.xcor() + (sq.width + 20), s.ycor() - (sq.height + 20))
             for i in range(2):
-                _shape.forward(sq.width)
-                _shape.left(90)
-                _shape.forward(sq.height)
-                _shape.left(90)
-            _shape.penup()
+                s.forward(sq.width)
+                s.left(90)
+                s.forward(sq.height)
+                s.left(90)
 
-        _shape.screen().exitonclick()
+        s.screen.exitonclick()
