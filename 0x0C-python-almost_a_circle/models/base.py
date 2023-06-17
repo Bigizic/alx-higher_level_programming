@@ -144,13 +144,14 @@ class Base:
         except IOError:
             return []
 
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Both classes objects using the turtle_module
-
+        
         Parameters:
-            list_rectangles (int) list of rectangle object to draw
-            list_squares (int) list or Square object to draw
+            list_rectangles (list) list of rectangle object to draw
+            list_squares (list) list or Square object to draw
         """
         _shape = turtle.Turtle()
         _shape.screen.bgcolor("black")
@@ -161,8 +162,6 @@ class Base:
         for rect in list_rectangles:
             _shape.goto(_shape.xcor() + (rect.width + 20), _shape.ycor()
                     - (rect.height + 20))
-            _shape.up()
-            _shape.down()
             for items in range(2):
                 _shape.forward(rect.width)
                 _shape.left(90)
@@ -174,8 +173,6 @@ class Base:
         for sq in list_squares:
             _shape.goto(_shape.xcor() + (sq.width + 20), _shape.ycor()
                     - (sq.height + 20))
-            _shape.up()
-            _shape.down()
             for i in range(2):
                 _shape.forward(sq.width)
                 _shape.left(90)
@@ -183,4 +180,4 @@ class Base:
                 _shape.left(90)
             _shape.penup()
 
-        _shape.Screen().exitonclick()
+        _shape.screen().exitonclick()
