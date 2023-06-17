@@ -154,33 +154,33 @@ class Base:
         """
         _shape = turtle.Turtle()
         _shape.screen.bgcolor("black")
-        _shape.pensize(3)
+        _shape.penup()
         _shape.shape("turtle")
-
         _shape.color("white")
+        _shape.goto(-200, 200)
         for rect in list_rectangles:
-            _shape.showturtle()
+            _shape.goto(_shape.xcor() + (rect.width + 20), _shape.ycor()
+                    - (rect.height + 20))
             _shape.up()
-            _shape.goto(rect.x, rect.y)
             _shape.down()
             for items in range(2):
                 _shape.forward(rect.width)
                 _shape.left(90)
                 _shape.forward(rect.height)
                 _shape.left(90)
-            _shape.hideturtle()
+            _shape.penup()
 
-        _shape.color("blue")
-        for s in list_squares:
-            _shape.showturtle()
+        _shape.goto(-200, 200)
+        for sq in list_squares:
+            _shape.goto(_shape.xcor() + (sq.width + 20), _shape.ycor()
+                    - (sq.height + 20))
             _shape.up()
-            _shape.goto(s.x, s.y)
             _shape.down()
             for i in range(2):
-                _shape.forward(s.width)
+                _shape.forward(sq.width)
                 _shape.left(90)
-                _shape.forward(s.height)
+                _shape.forward(sq.height)
                 _shape.left(90)
-            _shape.hideturtle()
+            _shape.penup()
 
-        _shape.exitonclick()
+        _shape.Screen().exitonclick()
