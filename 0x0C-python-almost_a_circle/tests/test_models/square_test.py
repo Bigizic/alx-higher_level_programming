@@ -157,9 +157,8 @@ class Test_square_args(unittest.TestCase):
         """In this test case the first argument passed to the Square
         becomes empty because the first argument to Square is usually
         the width but the second argument passed to the update() overides
-        the oiginal width which makes the arguments to the 3, (13, 3, 10)
-        no y because the only argument in Square is 3 which indicate x
-        alligned with the update() module
+        the oiginal width which makes the argument (13, 3, 10)
+        no y because the only argument from Square is 3 which indicate x
         """
         sq = Square(4, 3)
         sq.update(10, 13)
