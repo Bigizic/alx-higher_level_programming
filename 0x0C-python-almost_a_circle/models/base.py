@@ -144,11 +144,10 @@ class Base:
         except IOError:
             return []
 
-
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Both classes objects using the turtle_module
-        
+
         Parameters:
             list_rectangles (list) list of rectangle object to draw
             list_squares (list) list or Square object to draw
