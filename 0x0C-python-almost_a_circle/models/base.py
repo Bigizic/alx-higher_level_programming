@@ -183,10 +183,10 @@ class Base:
                 t.left(90)
             t.penup()
             t.hideturtle()
-        for rectangle in list_rectangle:
+        for rectangle in list_rectangles:
             draw_rectangle(rectangle)
 
-        for square in list_square:
+        for square in list_squares:
             draw_square(square)
 
         turtle.done()
