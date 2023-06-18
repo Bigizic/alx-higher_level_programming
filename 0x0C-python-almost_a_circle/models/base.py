@@ -58,8 +58,8 @@ class Base:
             if list_objs is None:
                 open_file.write("[]")
             else:
-                string_rep = cls.to_json_string([objs.to_dictionary() \
-                        for objs in list_objs])
+                string_rep = cls.to_json_string([objs.to_dictionary()
+                for objs in list_objs])
                 open_file.write(string_rep)
 
     @staticmethod
