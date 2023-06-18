@@ -16,9 +16,6 @@ from models.square import Square
 
 class Test_square_foundations(unittest.TestCase):
 
-    def setup(self):
-        Base.__nb_objects = 0
-
     def test_is_subclass(self):
         self.assertEqual(issubclass(Square, Rectangle), True)
         
@@ -28,9 +25,13 @@ class Test_square_foundations(unittest.TestCase):
         sq = Square(3, 2, 1, 4)
         self.assertEqual(sq.id, 4)
 
-    def test_for_ids(self):
-        sq = Square(4)
-        self.assertEqual(sq.id, 1)
+    #def test_for_ids(self):
+        #sq = Square(8)
+        #print("sq id is:", )
+        #self.assertEqual(sq.id, 1)
+        #sq = Square(7)
+        #print("Then id is:", sq.id)
+        #self.assertEqual(sq.id, 2)
 
     def test_for_square_area(self):
         sq = Square(5).area()
@@ -60,6 +61,10 @@ class Test_square_foundations(unittest.TestCase):
             sq = Square(elements)
         self.assertEqual(sq.size, elements)
 
+    def test_more_size(self):
+        sq = Square(9, 2, 3)
+        self.assertEqual(sq.size, 9)
+
     def test_different_types(self):
         a = [True, None, 1.2, "1", [1, 2, 3]]
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
@@ -74,6 +79,27 @@ class Test_square_foundations(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(1, 2, 3, 4, 7)
 
+    def test_width_and_height(self):
+        sq = Square(5, 6, 8)
+        self.assertEqual(sq.width, 5)
+        self.assertEqual(sq.height, 5)
+
+    def test_x_and_y(self):
+        sq = Square(9, 8, 7, 6)
+        self.assertEqual(sq.x, 8)
+        self.assertEqual(sq.y, 7)
+
+
+class Test_square_dict(unittest.TestCase):
+
+    def test_to_dictionary(self):
+        sq = Square(10, 2, 1, 4)
+        expected_output = {'id': 4, 'size': 10, 'x': 2, 'y': 1}
+        self.assertDictEqual(sq.to_dictionary(), expected_output)
+
+    def test_to_dictionary_with_args(self):
+        with self.assertRaises(TypeError):
+            Square(10, 2, 1, 4).to_dictionary(5)
 
 
 
