@@ -109,7 +109,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """write the CSV serialization of list_objs to a file, 
+        """write the CSV serialization of list_objs to a file,
         Has the serialization behaviour
         """
         class_name = ["id", "width", "height", "x", "y"]
