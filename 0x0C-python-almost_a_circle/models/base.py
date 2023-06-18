@@ -12,7 +12,6 @@ Raises:
 Return:
     Void
 """
-
 import json
 import csv
 import turtle
