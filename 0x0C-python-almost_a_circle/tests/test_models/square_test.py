@@ -120,8 +120,16 @@ class Test_square_foundations(unittest.TestCase):
 
 
 class Test_square_dict(unittest.TestCase):
-    """This Class contain test cases for the dictionary
-    """
+    """This Class contain test cases for the dictionary()
+
+        1.Test when arguments are passed to the square Class and the
+        dictionary function is being called to it, expected output is
+        successfully returned
+
+        2.Test when the to_dictionary function is called to Square Class
+        with arguments passed to Class and to_dictionary function. Expects
+        a typeError as the dictionary() expects one argument not 2
+        """
 
     def test_to_dictionary(self):
         sq = Square(10, 2, 1, 4)
@@ -131,6 +139,59 @@ class Test_square_dict(unittest.TestCase):
     def test_to_dictionary_with_args(self):
         with self.assertRaises(TypeError):
             Square(10, 2, 1, 4).to_dictionary(5)
+
+
+class Test_square_args(unittest.TestCase):
+
+    def test_update_no_args(self):
+        sq = Square(4, 3, 2, 12)
+        sq.update()
+        self.assertEqual(str(sq), "[Square] (12) 3/2 - 4")
+
+    def test_update_one_args(self):
+        sq = Square(4, 3, 2)
+        sq.update(10)
+        self.assertEqual(str(sq), "[Square] (10) 3/2 - 4")
+
+    def test_update_two_args(self):
+        """In this test case the first argument passed to the Square
+        becomes empty because the first argument to Square is usually
+        the width but the second argument passed to the update() overides
+        the oiginal width which makes the arguments to the 3, (13, 3, 10)
+        no y because the only argument in Square is 3 which indicate x
+        alligned with the update() module
+        """
+        sq = Square(4, 3)
+        sq.update(10, 13)
+        self.assertEqual(str(sq), "[Square] (10) 3/0 - 13")
+
+    def test_update_three_args(self):
+        sq = Square(4)
+        sq.update(10, 13, 3)
+        self.assertEqual(str(sq), "[Square] (10) 3/0 - 13")
+
+    def test_update_four_args(self):
+        sq = Square(3)
+        sq.update(10, 13, 3, 4)
+        self.assertEqual(str(sq), "[Square] (10) 3/4 - 13")
+
+    def test_update_x_and_y(self):
+        sq = Square(4, 6, 8, 9)
+        sq.update(10, 13, 5) #  Update x
+        self.assertEqual(str(sq), "[Square] (10) 5/8 - 13")
+        sq.update(10, 13, 5, 6) #  Update y
+        self.assertEqual(str(sq), "[Square] (10) 5/6 - 13")
+
+    def test_update_args_too_many_arguments(self):
+        sq = Square(4, 2, 3, 5)
+        sq.update(19, 18, 17, 16, 15, 14, 13)
+        self.assertEqual(str(sq), "[Square] (19) 17/16 - 18")
+
+    def test_update_retrives_x_and_y(self):
+        sq = Square(4)
+        sq.update(19, 18, 16, 15)
+        self.assertEqual(sq.x, 16) #  Retrives x
+        self.assertEqual(sq.y, 15) #  Retrives y
 
 
 
