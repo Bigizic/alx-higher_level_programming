@@ -25,7 +25,7 @@ class Base:
     def __init__(self, id=None):
         """Constructor
         """
-        if (id is not None):
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -85,7 +85,7 @@ class Base:
         attribute separately is created
         """
         if dictionary and dictionary != {}:
-            dummy_instance = cls(1, 2)
+            dummy_instance = cls(1, 1)
             dummy_instance.update(**dictionary)
             return dummy_instance
 
