@@ -36,7 +36,7 @@ class Base:
         """Returns the JSON representation of list_dictionaries
         """
         if (list_dictionaries is None or len(list_dictionaries) == 0):
-            return []
+            return "[]"
         else:
             return json.dumps(list_dictionaries)
 
@@ -67,7 +67,7 @@ class Base:
         """Returns the list of the JSON string representation
         """
         if json_string is None or len(json_string) == 0:
-            return []
+            return "[]"
         else:
             return json.loads(json_string)
 
@@ -104,7 +104,7 @@ class Base:
                 dummy_instance = [cls.create(**d) for d in dict_list]
                 return dummy_instance
         except IOError:
-            return []
+            return "[]"
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -137,11 +137,11 @@ class Base:
         try:
             with open(filename, "r", newline="") as open_file:
                 list_dicts = csv.DictReader(open_file, fieldnames=class_name)
-                list_dict = [dict([keys, int(val)] for keys, val in d.items())
+                list_dict = [dict([keys, int(val)] for keys, val in d.items())\
                         for d in list_dicts]
                 return [cls.create(**d) for d in list_dict]
         except IOError:
-            return []
+            return "[]"
 
     @staticmethod
     def draw(list_rectangles, list_squares):
