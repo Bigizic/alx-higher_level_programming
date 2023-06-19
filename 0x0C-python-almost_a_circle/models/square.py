@@ -48,6 +48,7 @@ class Square(Rectangle):
         if type(value) is int:
             if value > 0:
                 self.width = value
+                self.height = value
             else:
                 raise ValueError("wdith must be > 0")
         else:
