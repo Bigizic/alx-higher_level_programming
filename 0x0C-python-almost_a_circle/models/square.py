@@ -49,10 +49,6 @@ class Square(Rectangle):
             if value > 0:
                 self.width = value
                 self.height = value
-            else:
-                raise ValueError("wdith must be > 0")
-        else:
-            raise TypeError("width must be an intger")
 
     def update(self, *args, **kwargs):
         """Assigns attributes
