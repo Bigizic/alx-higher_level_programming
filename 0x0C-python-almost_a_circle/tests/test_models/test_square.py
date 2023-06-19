@@ -41,14 +41,6 @@ class Test_square_foundations(unittest.TestCase):
         sq = Square(3, 2, 1, 4)
         self.assertEqual(sq.id, 4)
 
-    #def test_for_ids(self):
-        #sq = Square(8)
-        #print("sq id is:", )
-        #self.assertEqual(sq.id, 1)
-        #sq = Square(7)
-        #print("Then id is:", sq.id)
-        #self.assertEqual(sq.id, 2)
-
     #  Return area of the sqaure
     def test_for_square_area(self):
         sq = Square(5).area()
@@ -72,7 +64,7 @@ class Test_square_foundations(unittest.TestCase):
         stdout = io.StringIO()
         sys.stdout = stdout
         sq.display()
-        sys.stdout = sys.__stdout__ #  Restore stdout
+        sys.stdout = sys.__stdout__  # Restore stdout
         actual_output = stdout.getvalue()
         self.assertEqual(actual_output, expected_output)
 
@@ -181,9 +173,9 @@ class Test_square_update_and_args(unittest.TestCase):
 
     def test_update_x_and_y(self):
         sq = Square(4, 6, 8, 9)
-        sq.update(10, 13, 5) #  Update x
+        sq.update(10, 13, 5)  # Update x
         self.assertEqual(str(sq), "[Square] (10) 5/8 - 13")
-        sq.update(10, 13, 5, 6) #  Update y
+        sq.update(10, 13, 5, 6)  # Update y
         self.assertEqual(str(sq), "[Square] (10) 5/6 - 13")
 
     def test_update_args_too_many_arguments(self):
@@ -194,8 +186,8 @@ class Test_square_update_and_args(unittest.TestCase):
     def test_update_retrives_x_and_y(self):
         sq = Square(4)
         sq.update(19, 18, 16, 15)
-        self.assertEqual(sq.x, 16) #  Retrives x
-        self.assertEqual(sq.y, 15) #  Retrives y
+        self.assertEqual(sq.x, 16)  # Retrives x
+        self.assertEqual(sq.y, 15)  # Retrives y
 
 
 class Test_square_update_kwargs(unittest.TestCase):
