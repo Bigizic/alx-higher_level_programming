@@ -55,8 +55,14 @@ class Square(Rectangle):
         """Assigns attributes
         """
         length = len(args)
+        count = 0
+        cnt = 0
         if not args and len(args) < 1:
             for key, value in kwargs.items():
+                if key is 'id' and value is None:
+                    count += 1
+                    value = count
+                    setattr(self, key, value)
                 if hasattr(self, key):
                     setattr(self, key, value)
 
