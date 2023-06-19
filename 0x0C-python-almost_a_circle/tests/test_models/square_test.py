@@ -141,12 +141,17 @@ class Test_square_dict(unittest.TestCase):
             Square(10, 2, 1, 4).to_dictionary(5)
 
 
-class Test_square_args(unittest.TestCase):
+class Test_square_update_and_args(unittest.TestCase):
 
     def test_update_no_args(self):
         sq = Square(4, 3, 2, 12)
         sq.update()
         self.assertEqual(str(sq), "[Square] (12) 3/2 - 4")
+
+    #def test_update_args_is_none(self):
+        #sq = Square(4, 3, 2, 12)
+        #sq.update(None)
+        #self.assertEqual(str(sq), "[Square] (1) 3/2 - 4")
 
     def test_update_one_args(self):
         sq = Square(4, 3, 2)
@@ -191,6 +196,46 @@ class Test_square_args(unittest.TestCase):
         sq.update(19, 18, 16, 15)
         self.assertEqual(sq.x, 16) #  Retrives x
         self.assertEqual(sq.y, 15) #  Retrives y
+
+
+class Test_square_update_kwargs(unittest.TestCase):
+
+    def test_update_no_kwargs(self):
+        sq = Square(6, 5, 4, 3)
+        sq.update()
+        self.assertEqual(str(sq), "[Square] (3) 5/4 - 6")
+
+    def test_update_one_kwargs(self):
+        sq = Square(6, 5, 4, 3)
+        sq.update(size=12)
+        self.assertEqual(str(sq), "[Square] (3) 5/4 - 12")
+
+    def test_update_two_kwargs(self):
+        sq = Square(6, 5, 4, 3)
+        sq.update(size=12, x=10)
+        self.assertEqual(str(sq), "[Square] (3) 10/4 - 12")
+
+    def test_update_three_kwargs(self):
+        sq = Square(6, 5, 4, 3)
+        sq.update(size=12, x=10, y=14)
+        self.assertEqual(str(sq), "[Square] (3) 10/14 - 12")
+
+    def test_update_four_kwargs(self):
+        sq = Square(6, 5, 4, 3)
+        sq.update(size=12, x=10, y=14, id=8)
+        self.assertEqual(str(sq), "[Square] (8) 10/14 - 12")
+
+    def test_update_None_id(self):
+        sq = Square(6, 5, 4, 3)
+        sq.update(id=None)
+        self.assertEqual(str(sq), "[Square] (1) 5/4 - 6")
+
+    def test_update_too_many_kwargs(self):
+        sq = Square(8, 7, 5, 4)
+        sq.update(size=12, x=10, id=None, y=14, w=18, o="Betty", u="HOl")
+        self.assertEqual(str(sq), "[Square] (1) 10/14 - 12")
+
+
 
 
 
