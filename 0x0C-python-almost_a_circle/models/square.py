@@ -43,12 +43,10 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        """Setter for size, sets the width to a value
+        """Setter for size, sets the width to a value and height
         """
-        if type(value) is int:
-            if value > 0:
-                self.width = value
-                self.height = value
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """Assigns attributes
