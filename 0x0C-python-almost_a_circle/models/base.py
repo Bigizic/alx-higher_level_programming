@@ -77,17 +77,20 @@ class Base:
         """
 
         """Created a dummy instance, this assumes that the cls expects
-        width and height only as mandatory attributes and initializes
+        width and height if the class name is Rectangle only as
+        mandatory attributes and initializes
         them to be greater than 0. The update method is then called on the
         dummy instance passing the dictionary arguments to it.
         By following this approach a new instance of the class with
         custom attributes values without explicitly specifying each
         attribute separately is created
         """
-        if dictionary and dictionary != {}:
+        if cls.__name__ == "Rectangle":
             dummy_instance = cls(1, 1)
-            dummy_instance.update(**dictionary)
-            return dummy_instance
+        else:
+            dummy_instance = cls(1)
+        dummy_instance.update(**dictionary)
+        return dummy_instance
 
     @classmethod
     def load_from_file(cls):
