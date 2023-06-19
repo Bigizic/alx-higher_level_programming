@@ -85,7 +85,7 @@ class Base:
         attribute separately is created
         """
         if dictionary and dictionary != {}:
-            dummy_instance = cls(1, 1)
+            dummy_instance = cls(1, 1, 1, 1, 1)
             dummy_instance.update(**dictionary)
             return dummy_instance
 
