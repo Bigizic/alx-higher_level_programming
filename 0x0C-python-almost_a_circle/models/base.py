@@ -136,10 +136,9 @@ class Base:
         filename = cls.__name__ + ".csv"
         try:
             with open(filename, "r", newline="") as open_file:
-                list_dicts = csv.DictReader(open_file, fieldnames=class_name)
-                list_dict = [dict([(keys, int(val)) for keys, val in d.items()])
-                        for d in list_dicts]
-                return [cls.create(**d) for d in list_dict]
+                l_d = csv.DictReader(open_file, fieldnames=class_name)
+                dct = [dict([k, int(v)] for k, v in d.items()) for d in l_d]
+                return [cls.create(**d) for d in dct]
         except IOError:
             return "[]"
 
