@@ -80,7 +80,7 @@ class Test_square_foundations(unittest.TestCase):
         sq = Square(9, 2, 3)
         self.assertEqual(sq.size, 9)
 
-    #  Return TypeError since size has an invalid type 
+    #  Return TypeError since size has an invalid type
     def test_different_types(self):
         a = [True, None, 1.2, "1", [1, 2, 3]]
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
@@ -139,11 +139,6 @@ class Test_square_update_and_args(unittest.TestCase):
         sq = Square(4, 3, 2, 12)
         sq.update()
         self.assertEqual(str(sq), "[Square] (12) 3/2 - 4")
-
-    #def test_update_args_is_none(self):
-        #sq = Square(4, 3, 2, 12)
-        #sq.update(None)
-        #self.assertEqual(str(sq), "[Square] (1) 3/2 - 4")
 
     def test_update_one_args(self):
         sq = Square(4, 3, 2)
