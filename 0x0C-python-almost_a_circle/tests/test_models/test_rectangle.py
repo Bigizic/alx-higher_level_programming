@@ -14,9 +14,10 @@ from models.base import Base
 from models.rectangle import Rectangle
 
 
-class Test_rectangle_foundations(unittest.TestCase):    
+class Test_rectangle_foundations(unittest.TestCase):
 
-    def setup(self):
+    def setUp(self):
+        super().setUp()
         Base._Base__nb_objects = 0
 
     def test_no_arguments(self):
@@ -69,6 +70,10 @@ class Test_rectangle_foundations(unittest.TestCase):
 
 class Test_Rectangle_errors(unittest.TestCase):
 
+    def setUp(self):
+        super().setUp()
+        Base._Base__nb_objects = 0
+
     def test_type_err(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             rect = Rectangle("Betty", 8, 7, 6, 5)
@@ -104,8 +109,9 @@ class Test_Rectangle_errors(unittest.TestCase):
 
 class Test_rectangle_fundamentals(unittest.TestCase):
 
-    def setup(self):
-        Base._Base.__nb_objects = 0
+    def setUp(self):
+        super().setUp()
+        Base._Base__nb_objects = 0
 
     def test_areas(self):
         rect = Rectangle(3, 2)
@@ -142,11 +148,117 @@ class Test_rectangle_fundamentals(unittest.TestCase):
 
 class Test_rectangle_str_function(unittest.TestCase):
 
-    def setup(self):
-        Base._Base.__nb_objects = 0
+    def setUp(self):
+        super().setUp()
+        Base._Base__nb_objects = 0
     
-    def test_correct_str_with_no_id(self):
+    def test_correct_str_method_with_no_id(self):
         rect = Rectangle(5, 5, 1)
-        exe_output = "[Rectangle] (1) 1/0 - 5/5"
-        
-        self.assertEqual(str(rect), exe_output)
+        self.assertEqual(rect.__str__(), "[Rectangle] (1) 1/0 - 5/5")
+
+    def test_correct_str_print(self):
+        rect = Rectangle(4, 6, 2, 1)
+        exe_output = "[Rectangle] (1) 2/1 - 4/6\n"
+
+        stdout = io.StringIO()
+        sys.stdout = stdout
+        print(rect)
+        sys.stdout = sys.__stdout__
+        actual_output = stdout.getvalue()
+        self.assertEqual(actual_output, exe_output)
+
+
+class Test_rectangle_update_function(unittest.TestCase):
+
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
+    def test_update_no_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update()
+        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/10")
+
+    def test_update_one_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
+
+    def test_update_two_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 2/10")
+
+    def test_update_three_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 2/3")
+
+    def test_update_four_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/10 - 2/3")
+
+    def test_update_all_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
+
+    def test_update_too_many_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(9, 4, 18, 4, 5, 9, 8, 7, "Betty")
+        self.assertEqual(str(r1), "[Rectangle] (9) 4/5 - 4/18")
+
+
+class Test_rectangle_update_kwargs(unittest.TestCase):
+
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
+    def test_update_no_kwargs(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update()
+        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/10")
+
+    def test_update_one_kwargs(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(height=1)
+        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/1")
+
+    def test_update_two_kwargs(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(width=1, x=2)
+        self.assertEqual(str(r1), "[Rectangle] (1) 2/10 - 1/10")
+
+    def test_update_three_kwargs(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(str(r1), "[Rectangle] (89) 3/1 - 2/10")
+
+    def test_update_all_kwargs(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(str(r1), "[Rectangle] (1) 1/3 - 4/2")
+
+    def test_update_too_many_kwargs(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(x=1, height=2, y=3, width=4, id=90, size=78)
+        self.assertEqual(str(r1), "[Rectangle] (90) 1/3 - 4/2")
+
+
+class Test_rectangle_to_dictionary(unittest.TestCase):
+
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
+    def test_to_dict(self):
+        r1 = Rectangle(10, 2, 1, 9)
+        exe_output = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        rect = r1.to_dictionary()
+        self.assertDictEqual(rect, exe_output)
+        r2 = Rectangle(1, 1)
+        r2.update(**rect)
+        self.assertNotEqual(r1, r2)
+
+
+if __name__ == '__main__':
+    unittest.main()
