@@ -236,7 +236,40 @@ class Test_square_update_kwargs(unittest.TestCase):
         self.assertEqual(str(sq), "[Square] (1) 10/14 - 12")
 
 
+class Test_sqaure_display(unittest.TestCase):
 
+    def test_display(self):
+        sq = Square(4)
+        exe_output = "####\n####\n####\n####\n"
+
+        stdout = io.StringIO()
+        sys.stdout = stdout
+        sq.display()
+        sys.stdout = sys.__stdout__
+        act_output = stdout.getvalue()
+        self.assertEqual(act_output, exe_output)
+
+    def test_display_width_N_height_and_x(self):
+        sq = Square(4, 2)
+        exe_output = "  ####\n  ####\n  ####\n  ####\n"
+
+        stdout = io.StringIO()
+        sys.stdout = stdout
+        sq.display()
+        sys.stdout = sys.__stdout__
+        act_output = stdout.getvalue()
+        self.assertEqual(act_output, exe_output)
+
+    def test_display_width_N_height_and_x_N_y(self):
+        sq = Square(4, 3, 3)
+        exe_output = "\n\n\n   ####\n   ####\n   ####\n   ####\n"
+
+        stdout = io.StringIO()
+        sys.stdout = stdout
+        sq.display()
+        sys.stdout = sys.__stdout__
+        act_output = stdout.getvalue()
+        self.assertEqual(act_output, exe_output)
 
 
 if __name__ == '__main__':
