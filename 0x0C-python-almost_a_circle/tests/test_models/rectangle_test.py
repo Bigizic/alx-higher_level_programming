@@ -104,6 +104,9 @@ class Test_Rectangle_errors(unittest.TestCase):
 
 class Test_rectangle_fundamentals(unittest.TestCase):
 
+    def setup(self):
+        Base._Base.__nb_objects = 0
+
     def test_areas(self):
         rect = Rectangle(3, 2)
         self.assertEqual(rect.area(), 6)
@@ -111,5 +114,39 @@ class Test_rectangle_fundamentals(unittest.TestCase):
         self.assertEqual(rect.area(), 56)
 
     def test_display(self):
-        exe_output = "####\n####\n####\n####\n####\n####"
         rect = Rectangle(4, 6)
+        exe_output = "####\n####\n####\n####\n####\n####\n"
+
+        stdout = io.StringIO()
+        sys.stdout = stdout
+        rect.display()
+        sys.stdout = sys.__stdout__
+        act_output = stdout.getvalue()
+        self.assertEqual(act_output, exe_output)
+
+    def test_display_five_arguments(self):
+        rect = Rectangle(2, 2, 3, 4, 5)
+        exe_output = "\n\n\n\n   ##\n   ##\n"
+
+        stdout = io.StringIO()
+        sys.stdout = stdout
+        rect.display()
+        sys.stdout = sys.__stdout__
+        act_output = stdout.getvalue()
+        self.assertEqual(act_output, exe_output)
+
+    def test_correct_str(self):
+        rect = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(rect), "[Rectangle] (12) 2/1 - 4/6")
+
+
+class Test_rectangle_str_function(unittest.TestCase):
+
+    def setup(self):
+        Base._Base.__nb_objects = 0
+    
+    def test_correct_str_with_no_id(self):
+        rect = Rectangle(5, 5, 1)
+        exe_output = "[Rectangle] (1) 1/0 - 5/5"
+        
+        self.assertEqual(str(rect), exe_output)
