@@ -107,7 +107,7 @@ class Base:
                 dummy_instance = [cls.create(**d) for d in dict_list]
                 return dummy_instance
         except IOError:
-            return "[]"
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
