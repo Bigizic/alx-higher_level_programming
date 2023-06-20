@@ -1,3 +1,6 @@
+# In this project, I encapsulated skills in Python object-oriented programming by coding three connected classes to represent rectangles and squares. I wrote my own test suite using the unittest module to test all functionality for each class.
+
+
 ## tests/:
 
 All your files, classes and methods must be unit tested and be PEP 8 validated.
