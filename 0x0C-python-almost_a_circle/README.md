@@ -1,4 +1,4 @@
-## In this project, I created three connected classes to represent Base, rectangles and squares. I wrote my own test suite using the unittest module to test all functionality for each class.
+## In this project, I created three connected classes to represent Base, Rectangle and Square. I wrote my own test suite using the unittest module to test all functionality for each class.
 
 
 ## tests/:
