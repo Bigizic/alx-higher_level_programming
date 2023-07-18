@@ -1,6 +1,6 @@
 -- a script that displays the average temperature
 
-SELECT `city`, AVG(`value`) AS `a_tmp`
+SELECT `city`, AVG(`value`) AS `avg_temp`
 FROM `temperatures`
 GROUP BY `city`
-ORDER BY `a_tmp` DESC;
+ORDER BY `avg_temp` DESC;
