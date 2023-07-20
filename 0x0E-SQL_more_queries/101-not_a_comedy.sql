@@ -9,4 +9,4 @@ WHERE id NOT IN (
 	FROM tv_show_genres
 	WHERE genre_id = @comedy_id
 )
-ORDER BY title ASC;
+ORDER BY title;
