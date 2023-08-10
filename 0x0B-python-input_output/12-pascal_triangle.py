@@ -14,6 +14,6 @@ def pascal_triangle(n):
             if x == 0 or x == i:
                 tmp.append(1)
             else:
-                tmp.append(res[i-1][x-1] + res[i-1][x])
+                tmp.append(res[i - 1][x - 1] + res[i - 1][x])
         res.append(tmp)
     return res
