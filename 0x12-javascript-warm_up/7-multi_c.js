@@ -5,6 +5,7 @@ const nTimes = () => {
   const num = parseInt(args[0]);
   let neg = false;
   let i = 0;
+  if (num === 0) { return; }
 
   if (!isNaN(num) && num > 0) {
     for (i = 0; i < num; i++) {
