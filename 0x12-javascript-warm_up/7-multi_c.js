@@ -7,7 +7,7 @@ const nTimes = () => {
   let i = 0;
   if (num === 0) { return; }
 
-  if (!isNaN(num) && num > 0) {
+  if (!isNaN(num)) {
     for (i = 0; i < num; i++) {
       console.log('C is fun');
     }
