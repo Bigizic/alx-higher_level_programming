@@ -20,14 +20,15 @@ def filter_cities():
     query = """
     SELECT cities.name
     FROM cities
-    JOIN states ON cities.state_id = states.id
-    WHERE states.name LIKE %s
+    INNER JOIN states ON states.id = cities.state_id
+    WHERE states.name = %s
     ORDER BY cities.id ASC
     """
-    cursor.execute(query, ('%' + state_name + '%',))
+    cursor.execute(query, (state_name))
     results = cursor.fetchall()
-    for names in results:
-        print(names)
+    tmp = [names[0] for names in results]
+    output = ', '.join(tmp)
+    print(output)
 
     cursor.close()
     con.close()
