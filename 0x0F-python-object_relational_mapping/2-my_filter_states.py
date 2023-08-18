@@ -20,7 +20,7 @@ def list_states_n():
     connection = MySQLdb.connect(host="localhost", port=3306, user=user_name,
                                  passwd=ps_word, db=d_b, charset="utf8")
     cursor = connection.cursor()
-    query = "SELECT * FROM states WHERE name IN {} ORDER BY id ASC".format(arg)
+    query = "SELECT * FROM states WHERE name = {} ORDER BY id ASC".format(arg)
     cursor.execute(query)
     results = cursor.fetchall()
     for row in results:
