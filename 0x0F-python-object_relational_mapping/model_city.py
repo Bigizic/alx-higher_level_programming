@@ -4,8 +4,7 @@
 """
 
 from sqlalchemy import MetaData, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from model_base import Base
+from model_state import Base
 
 
 class City(Base):
