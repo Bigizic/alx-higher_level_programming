@@ -22,11 +22,13 @@ def model_city_fetch_by_state():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    fetch_states = session.query(City).order_by(City.id)
+    fetch_states = session.query(City, State).join(State).order_by(
+                   City.id).all()
 
-    for city in fetch_states:
-        print("{}: ({}) {}".format(city.state.name, city.id, city.name))
+    for city, state in fetch_states:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
 
+    session.commit()
     session.close()
 
 
