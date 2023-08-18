@@ -23,11 +23,12 @@ def model_state_delete_a():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    fetch_states = session.query(State).filter(State.name == ('a',))
-    
-    session.delete(fetch_states)
+    fetch_states = session.query(State).filter(State.name.like('%a%'))
+    for states in fetch_states:
+        session.delete(states)
 
     session.commit()
+
     session.close()
 
 
