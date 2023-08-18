@@ -25,7 +25,7 @@ def model_state_fetch_first():
     if (fetch_first_state):
         print(fetch_first_state.id, fetch_first_state.name, sep=": ")
     else:
-        print()
+        print("Nothing")
 
     session.close()
 
