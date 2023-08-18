@@ -16,22 +16,17 @@ def list_states_n():
     ps_word = stdin_args[1]
     d_b = stdin_args[2]
 
-    try:
-        connection = MySQLdb.connect(host="localhost", port=3306, user=user_name,
-                                     passwd=ps_word, db=d_b, charset="utf8")
-        cursor = connection.cursor()
-        query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
-        cursor.execute(query)
-        results = cursor.fetchall()
-        for row in results:
-            print(row)
+    connection = MySQLdb.connect(host="localhost", port=3306, user=user_name,
+                                 passwd=ps_word, db=d_b, charset="utf8")
+    cursor = connection.cursor()
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    cursor.execute(query)
+    results = cursor.fetchall()
+    for row in results:
+        print(row)
 
-    except MySQLdb.Error as e:
-        print("Error: {}".format(e))
-
-    finally:
-        cursor.close()
-        connection.close()
+    cursor.close()
+    connection.close()
 
 
 if __name__ == '__main__':
