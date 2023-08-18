@@ -8,6 +8,7 @@ from sqlalchcemy.orm import sessionmaker
 from model_state import Base, State
 import sys
 
+
 def model_state_fetch_all():
     """A script that takes 3 arguments from stdin connect to a MySQL server
     running on localhost at port 3306
@@ -24,6 +25,6 @@ def model_state_fetch_all():
 
     session.close()
 
-    inspector = inspect(engine)
+
 if __name__ == '__main__':
     model_state_fetch_all()
