@@ -18,13 +18,13 @@ def filter_cities():
 
     cursor = con.cursor()
     query = """
-    SELECT cities.name
+    SELECT cities.id, cities.name
     FROM cities
     JOIN states ON cities.state_id = states.id
-    WHERE states.name LIKE BINARY %s
+    WHERE states.name = %s
     ORDER BY cities.id ASC
     """
-    cursor.execute(query, (state_name, ))
+    cursor.execute(query, (state_name,))
     results = cursor.fetchall()
     for names in results:
         print(names)
