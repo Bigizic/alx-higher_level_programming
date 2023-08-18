@@ -21,13 +21,12 @@ def filter_cities():
     SELECT cities.name
     FROM cities
     INNER JOIN states ON states.id=cities.state_id
-    WHERE states.name = %s
+    WHERE states.name=%s
     """
     cursor.execute(query, (state_name))
     results = cursor.fetchall()
-    tmp = [names[0] for names in results]
-    output = ', '.join(tmp)
-    print(output)
+    tmp = list(names[0] for names in results)
+    print(*tmp, sep=", ")
 
     cursor.close()
     con.close()
