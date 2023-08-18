@@ -4,7 +4,7 @@
 """
 
 from sqlalchemy import (create_engine)
-from sqlalchcemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 import sys
 
