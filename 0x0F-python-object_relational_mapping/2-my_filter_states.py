@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""A script that lists all states with a name starting with N
+"""A script that display all values where name column matches the 4th arg
 """
 
 import MySQLdb
@@ -9,7 +9,7 @@ import sys
 
 def list_states_n():
     """Establish a connection, execute an sql query, fetch and print result
-    of states starting with a captial N
+    of states that match 4th argument
     """
     user_name = sys.argv[1]
     ps_word = sys.argv[2]
