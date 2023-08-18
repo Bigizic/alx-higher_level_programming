@@ -25,10 +25,10 @@ def model_state_delete_a():
 
     fetch_states = session.query(State).filter(State.name.like('%a%'))
 
-    if fetch_states:
-        session.delete(fetch_states)
-        session.commit()
+    for states in fetch_states
+        session.delete(states)
 
+    session.commit()
     session.close()
 
 
