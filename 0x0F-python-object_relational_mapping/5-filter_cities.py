@@ -20,9 +20,8 @@ def filter_cities():
     query = """
     SELECT cities.name
     FROM cities
-    INNER JOIN states ON states.id = cities.state_id
+    INNER JOIN states ON states.id=cities.state_id
     WHERE states.name = %s
-    ORDER BY cities.id ASC
     """
     cursor.execute(query, (state_name))
     results = cursor.fetchall()
