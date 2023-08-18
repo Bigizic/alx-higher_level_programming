@@ -30,5 +30,6 @@ def model_state_insert():
 
     session.close()
 
+
 if __name__ == '__main__':
     model_state_insert()
