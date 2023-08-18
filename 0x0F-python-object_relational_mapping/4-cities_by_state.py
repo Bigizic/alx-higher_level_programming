@@ -11,12 +11,12 @@ import sys
 def cities_by_state():
     """Implementation
     """
-    user_name = args[1]
-    ps_w = args[2]
-    d_b = args[3]
+    user_name = sys.argv[1]
+    ps_w = sys.argv[2]
+    d_b = sys.argv[3]
 
-    con = MySQL.connect(host="localhost", port=3306, user=user_name,
-                        passwd=ps_w, db=d_b)
+    con = MySQLdb.connect(host="localhost", port=3306, user=user_name,
+                        passwd=ps_w, db=d_b, charset="utf8")
     cursor = con.cursor()
     queries = """
     SELECT cities.id, cities.name
