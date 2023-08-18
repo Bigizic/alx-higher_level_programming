@@ -11,16 +11,16 @@ def list_states_n():
     """Establish a connection, execute an sql query, fetch and print result
     of states starting with a captial N
     """
-    stdin_args = sys.argv[1:]
-    user_name = stdin_args[0]
-    ps_word = stdin_args[1]
-    d_b = stdin_args[2]
-    arg = stdin_args[3]
+    user_name = sys.argv[1]
+    ps_word = sys.argv[2]
+    d_b = sys.argv[3]
+    arg = sys.argv[4]
 
     connection = MySQLdb.connect(host="localhost", port=3306, user=user_name,
                                  passwd=ps_word, db=d_b, charset="utf8")
     cursor = connection.cursor()
-    query = "SELECT * FROM states WHERE name = {} ORDER BY id ASC".format(arg)
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}'ORDER BY id ASC"\
+            .format(arg)
     cursor.execute(query)
     results = cursor.fetchall()
     for row in results:
