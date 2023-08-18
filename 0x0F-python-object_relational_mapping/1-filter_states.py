@@ -20,7 +20,7 @@ def list_states_n():
                                  passwd=ps_word, db=d_b, charset="utf8")
 
     cursor = connection.cursor()
-    query = "SELECT * FROM states WHERE name LIKE 'N%'"
+    query = "SELECT * FROM states ORDER BY id ASC WHERE name LIKE 'N%'"
     cursor.execute(query)
     results = cursor.fetchall()
     for row in results:
