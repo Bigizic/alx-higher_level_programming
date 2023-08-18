@@ -23,13 +23,10 @@ def model_state_my_get():
     session = Session()
 
     fetch_states = session.query(State).filter(
-                    State.name.like('%{}%').format(sys.argv[4])
-                    ).order_by(State.id)
-
-    if (fetch_states):
-        for states in fetch_states:
-            print(states.id)
-    else:
+                   State.name.like('%{}%').format(sys.argv[4]))
+    try:
+        print(fetch_states[0].id)
+    except IndexError:
         print("Not found")
 
     session.close()
