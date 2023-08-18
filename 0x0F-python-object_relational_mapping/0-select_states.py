@@ -15,7 +15,7 @@ def list_states():
     d_b = stdin_args[2]
 
     connection = MySQLdb.connect(host="localhost", port=3306, user=user_name,
-                                  passwd=ps_word, db=d_b, charset="utf8")
+                                 passwd=ps_word, db=d_b, charset="utf8")
 
     cursor = connection.cursor()
     query = "SELECT * FROM states ORDER BY id ASC"
