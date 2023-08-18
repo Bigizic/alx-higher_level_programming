@@ -7,6 +7,7 @@ import sys
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from model_city import City
 
 
 def model_city_fetch_by_state():
@@ -21,10 +22,10 @@ def model_city_fetch_by_state():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    fetch_states = session.query(State).order_by(cities.id)
+    fetch_states = session.query(City).order_by(City.id)
 
-    for state in fetch_states:
-        print("{}: {()} {}".format(state.name, cities.id, cities.name))
+    for city in fetch_states:
+        print("{}: ({}) {}".format(city.state.name, city.id, city.name))
 
     session.close()
 
