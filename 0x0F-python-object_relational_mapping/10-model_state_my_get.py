@@ -22,8 +22,7 @@ def model_state_my_get():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    fetch_states = session.query(State).filter(
-                   State.name.like('%{}%').format(sys.argv[4]))
+    fetch_states = session.query(State).filter(State.name == (sys.argv[4],))
     try:
         print(fetch_states[0].id)
     except IndexError:
