@@ -22,8 +22,9 @@ def filter_cities():
                    INNER JOIN states ON states.id=cities.state_id
                    WHERE states.name=%s""", (state_name,))
     results = cursor.fetchall()
-    tmp = list(names[0] for names in results)
-    print(*tmp, sep=", ")
+    tmp = [names[0] for names in results]
+    output = ', '.join(tmp)
+    print(output)
 
     cursor.close()
     con.close()
