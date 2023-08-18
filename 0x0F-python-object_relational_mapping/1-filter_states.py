@@ -19,7 +19,7 @@ def list_states_n():
     connection = MySQLdb.connect(host="localhost", port=3306, user=user_name,
                                  passwd=ps_word, db=d_b, charset="utf8")
     cursor = connection.cursor()
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE '_N%' ORDER BY id ASC"
     cursor.execute(query)
     results = cursor.fetchall()
     for row in results:
