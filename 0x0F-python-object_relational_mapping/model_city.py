@@ -3,7 +3,7 @@
 """contains the class City and an instance Base imported from model_base
 """
 
-from sqlalchemy import MetaData, Column, Integer, String
+from sqlalchemy import ForeignKey, Column, Integer, String
 from model_state import Base
 
 
