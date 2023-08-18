@@ -17,13 +17,10 @@ def filter_cities():
                           passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
 
     cursor = con.cursor()
-    query = """
-    SELECT cities.name
-    FROM cities
-    INNER JOIN states ON states.id=cities.state_id
-    WHERE states.name=%s
-    """
-    cursor.execute(query, ('%' + state_name + '%',))
+    cursor.execute("""SELECT cities.name
+                   FROM cities
+                   INNER JOIN states ON states.id=cities.state_id
+                   WHERE states.name=%s""", (state_name,))
     results = cursor.fetchall()
     tmp = list(names[0] for names in results)
     print(*tmp, sep=", ")
