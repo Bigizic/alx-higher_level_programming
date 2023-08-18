@@ -16,7 +16,7 @@ def cities_by_state():
     d_b = sys.argv[3]
 
     con = MySQLdb.connect(host="localhost", port=3306, user=user_name,
-                        passwd=ps_w, db=d_b, charset="utf8")
+                          passwd=ps_w, db=d_b, charset="utf8")
     cursor = con.cursor()
     queries = """
     SELECT cities.id, cities.name
