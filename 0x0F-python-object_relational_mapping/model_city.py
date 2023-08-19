@@ -3,10 +3,9 @@
 """contains the class City and an instance Base imported from model_state
 """
 
-from sqlalchemy import ForeignKey, Column, Integer, String
-from sqlalchemy.orm import relationship
-from model_state import Base, State
-
+from sqlalchemy import Column, Integer, String
+from model_state import Base
+from sqlalchemy.sql.schema import ForeignKey
 
 class City(Base):
     """
@@ -14,8 +13,6 @@ class City(Base):
     foreign key from State table)
     """
     __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, nullable=False, ForeignKey('states.id'))
-
-    state = relationship("State")
