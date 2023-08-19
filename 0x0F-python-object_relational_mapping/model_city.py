@@ -1,18 +1,17 @@
 #!/usr/bin/python3
-
-"""contains the class City and an instance Base imported from model_state
+"""
+Module containing the City class
 """
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
-from sqlalchemy.sql.schema import ForeignKey
+
 
 class City(Base):
     """
-    A class that sets id,name of the table(cities) and states id (based on a
-    foreign key from State table)
+    Class definition of a City
     """
     __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, ForeignKey('states.id'))
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
