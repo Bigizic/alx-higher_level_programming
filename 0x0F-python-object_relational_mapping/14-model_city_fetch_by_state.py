@@ -22,9 +22,10 @@ def model_city_fetch_by_state():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    fetch_states = session.query(City, State).join(City.State)
+    fetch_states = session.query(State, City).filter(
+                   State.id == City.state_id).order_by(City.id)
 
-    for city, state in fetch_states.all():
+    for state, city in fetch_states:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     # session.commit()
