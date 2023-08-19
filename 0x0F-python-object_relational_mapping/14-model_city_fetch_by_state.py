@@ -16,18 +16,18 @@ def model_city_fetch_by_state():
     from the database in ascending order by cities.id
     """
 
-    db_connect = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-                                sys.argv[1], sys.argv[2], sys.argv[3]))
-    engine = create_engine(db_connect)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+                            sys.argv[1], sys.argv[2], sys.argv[3]))
+    # engine = create_engine(db_connect)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    fetch_states = session.query(City, State).join(State)
+    fetch_states = session.query(City, State).join(City.State)
 
     for city, state in fetch_states.all():
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
-    session.commit()
+    # session.commit()
     session.close()
 
 
