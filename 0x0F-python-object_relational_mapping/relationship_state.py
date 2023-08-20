@@ -3,7 +3,7 @@
 Module containing improvement to the State class
 """
 
-from sqlalchemy import Column, Integer, MetaData
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
