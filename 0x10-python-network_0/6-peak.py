@@ -10,12 +10,12 @@ def find_peak(list_of_integers):
         return max(list_of_integers)
 
     lis = list_of_integers
-    peak = None
-
-    if lis[0] >= lis[1] and lis[0] >= len(lis):
-        return lis[0]
-
-    for i in range(len(list_of_integers) - 1):
-        if lis[i] >= lis[i - 1] and lis[i] >= lis[i + 1]:
-            peak = lis[i]
-    return peak
+    left = 0
+    right = len(lis) - 1
+    while left < right:
+        mid = left + (right - left) // 2
+        if lis[mid] < lis[mid + 1]:
+            left = mid + 1
+        else:
+            right = mid
+    return lis[left]
