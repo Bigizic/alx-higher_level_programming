@@ -8,8 +8,10 @@
 `API`
 `Http Verbs`
 
-| Questions | | Answers |
-| ---- | | ---- |
+
+
+| Questions | Answers |
+| --- | --- |
 | What is URL | known for it's name `uniform resource identifier`, it specifies the location of a web resource on a computer |
 | What is Http | Hyper text transfer protocol, an application protocol used in the internet for the web |
 | How to read a Url | `https://www.isaacajibola.tech` protocol name is `https` subdomain: `www` domain: `isaacajibola.tech` and `https://www.isaacajibola.tech/login/login.html` resource path: `/login/login.html` |
