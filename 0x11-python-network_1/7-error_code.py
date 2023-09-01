@@ -10,7 +10,7 @@ import sys
 if __name__ == '__main__':
 
     address = sys.argv[1]
-    get_r = requests(address)
+    get_r = requests.get(address)
 
     if get_r.status_code >= 400:
         print("Error code: {}".format(get_r.status_code))
