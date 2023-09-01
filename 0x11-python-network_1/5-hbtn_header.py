@@ -11,4 +11,4 @@ if __name__ == '__main__':
     address = sys.argv[1]
 
     get_r = requests.get(address)
-    print(get_r.headers['X-Request-Id'])
+    print(get_r.headers.get('X-Request-Id'))
