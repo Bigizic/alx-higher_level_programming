@@ -14,4 +14,4 @@ if __name__ == '__main__':
             print(open_url.read().decode('utf-8'))
 
     except error.HTTPError as e:
-        print("Error code: {}".format(e))
+        print("Error code: {}".format(e.code))
