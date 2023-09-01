@@ -7,8 +7,9 @@ of the response
 import urllib.request
 import sys
 
-address = sys.argv[1]
+if __name__ == '__main__':
+    address = sys.argv[1]
 
-with urllib.request.urlopen(address) as open_url:
-    get_variable = open_url.getheader('X-Request-Id')
-    print(get_variable)
+    with urllib.request.urlopen(address) as open_url:
+        get_variable = open_url.getheader('X-Request-Id')
+        print(get_variable)
