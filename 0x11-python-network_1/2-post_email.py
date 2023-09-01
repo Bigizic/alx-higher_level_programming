@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+"""A python script that takes in a url and an email sends a post
+request to the passed url
+"""
+
+import sys
+import urllib.parse
+import urllib.request
+
+address = sys.argv[1]
+email = sys.argv[2]
+
+email_dict = {"email": email}
+email_dict = urllib.parse.urlencode(email_dict).encode('utf-8')
+
+with urllib.request.urlopen(address, email_dict) as post_req:
+    body = post_req.read().decode('utf-8')
+    print(body)
