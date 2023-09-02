@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     api = f'https://api.github.com/repos/{owner}/{repo}/commits?per_page=10'
     get_r = requests.get(api)
-    for commits in get_r.json():
+    for commits in reversed(eet_r.json()):
         sha = commits.get("sha")
         author = commits.get("commit").get("author")
         name = author.get("name")            
