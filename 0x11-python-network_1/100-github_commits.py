@@ -11,7 +11,7 @@ if __name__ == '__main__':
     repo = sys.argv[1]
     owner = sys.argv[2]
 
-    api = f'https://api.github.com/repos/{owner}/{repo}/commits'
+    api = f'https://api.github.com/repos/{owner}/{repo}/commits?per_page=10'
     get_r = requests.get(api)
     for commits in get_r.json():
         sha = commits.get("sha")
