@@ -16,5 +16,5 @@ if __name__ == '__main__':
     for commits in reversed(eet_r.json()):
         sha = commits.get("sha")
         author = commits.get("commit").get("author")
-        name = author.get("name")            
+        name = author.get("name")
         print("{}: {}".format(sha, name))
