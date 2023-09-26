@@ -13,7 +13,7 @@ const characterCount = () => {
     }
     const data = JSON.parse(body);
     for (const item of data.results) {
-      if (Array.isArray(item.characters) && item.characters.includes(charId)) {
+      if (item.characters.includes(charId)) {
         count += 1;
       }
     }
