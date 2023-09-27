@@ -10,7 +10,7 @@ const numberOfCompletedTasks = () => {
     if (error) throw error;
     const data = JSON.parse(body);
     data.forEach((item, index) => {
-      if (!userIdList.includes(item.userId)) {
+      if (!userIdList.includes(item.userId) && item.completed === true) {
         userIdList.push(item.userId);
         completed[item.userId] = 0;
       }
